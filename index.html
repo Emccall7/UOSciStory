@@ -30,7 +30,6 @@ body { margin: 0; padding: 0; }
 </head>
 
     
-    
 <body>
 
 <div id="map"></div>
@@ -38,12 +37,20 @@ body { margin: 0; padding: 0; }
     
 <script>
 	mapboxgl.accessToken = 'pk.eyJ1IjoiZWRlbm1jY2FsbCIsImEiOiJja214eTR3bGMwMGM2MnB0ZGs5dHh1eGtzIn0.S-fSav0WfGimuhXNj2ErEQ';
+    
+    // Set bounds to Oregon
+    var bounds = [
+		    [-126.268082, 41.355068], // Southwest coordinates
+		    [-114.619473, 46.950028] // Northeast coordinates 
+	];
+    
     const map = new mapboxgl.Map({
         container: 'map',
         // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
         style: 'mapbox://styles/edenmccall/clhy7uchu00rj01r8b9no1f35',
         center: [-123.074056, 44.043331],
-        zoom: 7
+        zoom: 7,
+        maxBounds: bounds // Sets bounds from variable above
     });
 
     map.on('load', () => {
