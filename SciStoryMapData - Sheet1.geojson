@@ -1,0 +1,329 @@
+{
+   "type": "FeatureCollection",
+   "features": [
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -122.585765,44.143865 ]
+    },
+    "properties": {
+    "Slug":"harden",
+    "Title":"Hardened",
+    "Year":2021,
+    "Topic":"Land",
+    "Media":"Photos",
+    "LastName":"Lapointe",
+    "FirstName":"Wesley",
+    "Image":"https://blogs.uoregon.edu/uosciencestory/files/2023/04/20210604_Flammable_Images_WL_0014.jpg",
+    "Text":"Oregon’s forests are designed to burn; our homes don’t have to be. Still standing after the 2020 wildfires, some Oregon homes point to a future of coexistence with fire."
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -122.611778,44.137225 ]
+    },
+    "properties": {
+    "Slug":"dam",
+    "Title":"Beautiful and Dammed",
+    "Year":2022,
+    "Topic":"Water",
+    "Media":"Illustration",
+    "LastName":"Aronson",
+    "FirstName":"Eliza",
+    "Image":"https://blogs.uoregon.edu/uosciencestory/files/2023/03/DJI_0077-1.jpg",
+    "Text":"Rivers like the McKenzie have always been integral to the Pacific Northwest, and dams that have been built across many of its rivers are inseparable from its modern history.   "
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -123.894418,44.739943 ]
+    },
+    "properties": {
+    "Slug":"dryfarm",
+    "Title":"Siletz Dry farming",
+    "Year":2023,
+    "Topic":"Land",
+    "Media":"Photos",
+    "LastName":"Aronson",
+    "FirstName":"Eliza",
+    "Image":"https://blogs.uoregon.edu/uosciencestory/files/2023/04/20210604_Flammable_Images_WL_0014.jpg",
+    "Text":"Rivers like the McKenzie have always been integral to the Pacific Northwest, and dams that have been built across many of its rivers are inseparable from its modern history.   "
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -121.999304,44.372832 ]
+    },
+    "properties": {
+    "Slug":"pfas",
+    "Title":"PFAS",
+    "Year":2023,
+    "Topic":"People",
+    "Media":"Written",
+    "LastName":"Brewer",
+    "FirstName":"Jessica",
+    "Image":"https://blogs.uoregon.edu/uosciencestory/files/2023/04/20210604_Flammable_Images_WL_0014.jpg",
+    "Text":"Rivers like the McKenzie have always been integral to the Pacific Northwest, and dams that have been built across many of its rivers are inseparable from its modern history.   "
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -124.066445,44.624643 ]
+    },
+    "properties": {
+    "Slug":"crab",
+    "Title":"Christmas Crab",
+    "Year":2023,
+    "Topic":"Water",
+    "Media":"Film",
+    "LastName":"Cruz",
+    "FirstName":"Alonso",
+    "Image":"https://blogs.uoregon.edu/uosciencestory/files/2023/04/20210604_Flammable_Images_WL_0014.jpg",
+    "Text":"Rivers like the McKenzie have always been integral to the Pacific Northwest, and dams that have been built across many of its rivers are inseparable from its modern history.   "
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -123.072633,44.049802 ]
+    },
+    "properties": {
+    "Slug":"garden",
+    "Title":"Urban Garden and Soil",
+    "Year":2023,
+    "Topic":"Land",
+    "Media":"Written",
+    "LastName":"Hodges",
+    "FirstName":"Lauren",
+    "Image":"https://blogs.uoregon.edu/uosciencestory/files/2023/04/20210604_Flammable_Images_WL_0014.jpg",
+    "Text":"Rivers like the McKenzie have always been integral to the Pacific Northwest, and dams that have been built across many of its rivers are inseparable from its modern history.   "
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -123.074368,44.045436 ]
+    },
+    "properties": {
+    "Slug":"natbee",
+    "Title":"Native Bees",
+    "Year":2023,
+    "Topic":"People",
+    "Media":"Photos",
+    "LastName":"Hutcherson",
+    "FirstName":"Ella",
+    "Image":"https://blogs.uoregon.edu/uosciencestory/files/2023/04/20210604_Flammable_Images_WL_0014.jpg",
+    "Text":"Rivers like the McKenzie have always been integral to the Pacific Northwest, and dams that have been built across many of its rivers are inseparable from its modern history.   "
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -122.673245,45.523547 ]
+    },
+    "properties": {
+    "Slug":"crows",
+    "Title":"PDX Crows",
+    "Year":2023,
+    "Topic":"People",
+    "Media":"Written",
+    "LastName":"Lapointe",
+    "FirstName":"Wesley",
+    "Image":"https://blogs.uoregon.edu/uosciencestory/files/2023/04/20210604_Flammable_Images_WL_0014.jpg",
+    "Text":"Rivers like the McKenzie have always been integral to the Pacific Northwest, and dams that have been built across many of its rivers are inseparable from its modern history.   "
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -122.623032,44.12184 ]
+    },
+    "properties": {
+    "Slug":"blueberry",
+    "Title":"bugs at Whitewater ranch (SWD)",
+    "Year":2023,
+    "Topic":"Land",
+    "Media":"Written",
+    "LastName":"Lawrence",
+    "FirstName":"Eliza",
+    "Image":"https://blogs.uoregon.edu/uosciencestory/files/2023/04/20210604_Flammable_Images_WL_0014.jpg",
+    "Text":"Rivers like the McKenzie have always been integral to the Pacific Northwest, and dams that have been built across many of its rivers are inseparable from its modern history.   "
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -124.502188,42.735367 ]
+    },
+    "properties": {
+    "Slug":"kelp",
+    "Title":"PNW Kelp",
+    "Year":2023,
+    "Topic":"Water",
+    "Media":"Film",
+    "LastName":"Lueck",
+    "FirstName":"Anna",
+    "Image":"https://blogs.uoregon.edu/uosciencestory/files/2023/04/20210604_Flammable_Images_WL_0014.jpg",
+    "Text":"Rivers like the McKenzie have always been integral to the Pacific Northwest, and dams that have been built across many of its rivers are inseparable from its modern history.   "
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -121.31773,44.049151 ]
+    },
+    "properties": {
+    "Slug":"frog",
+    "Title":"Oregon spotted frogs",
+    "Year":2023,
+    "Topic":"Water",
+    "Media":"Photos",
+    "LastName":"McCall",
+    "FirstName":"Eden",
+    "Image":"https://blogs.uoregon.edu/uosciencestory/files/2023/04/20210604_Flammable_Images_WL_0014.jpg",
+    "Text":"Rivers like the McKenzie have always been integral to the Pacific Northwest, and dams that have been built across many of its rivers are inseparable from its modern history.   "
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -123.104926,44.000309 ]
+    },
+    "properties": {
+    "Slug":"house",
+    "Title":"Passive Houses",
+    "Year":2023,
+    "Topic":"People",
+    "Media":"Illustration",
+    "LastName":"Merrill",
+    "FirstName":"Maya",
+    "Image":"https://blogs.uoregon.edu/uosciencestory/files/2023/04/20210604_Flammable_Images_WL_0014.jpg",
+    "Text":"Rivers like the McKenzie have always been integral to the Pacific Northwest, and dams that have been built across many of its rivers are inseparable from its modern history.   "
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -123.067064,44.051888 ]
+    },
+    "properties": {
+    "Slug":"sound",
+    "Title":"Noise/Commuting",
+    "Year":2023,
+    "Topic":"People",
+    "Media":"Maps",
+    "LastName":"Miccio",
+    "FirstName":"aj",
+    "Image":"https://blogs.uoregon.edu/uosciencestory/files/2023/04/20210604_Flammable_Images_WL_0014.jpg",
+    "Text":"Rivers like the McKenzie have always been integral to the Pacific Northwest, and dams that have been built across many of its rivers are inseparable from its modern history.   "
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -123.076591,44.011152 ]
+    },
+    "properties": {
+    "Slug":"creek",
+    "Title":"Amazon Creek",
+    "Year":2023,
+    "Topic":"Water",
+    "Media":"Maps",
+    "LastName":"O'Connell",
+    "FirstName":"Riley",
+    "Image":"https://blogs.uoregon.edu/uosciencestory/files/2023/04/20210604_Flammable_Images_WL_0014.jpg",
+    "Text":"Rivers like the McKenzie have always been integral to the Pacific Northwest, and dams that have been built across many of its rivers are inseparable from its modern history.   "
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -123.17278,44.47204 ]
+    },
+    "properties": {
+    "Slug":"cows",
+    "Title":"Oregon Dairy",
+    "Year":2023,
+    "Topic":"Land",
+    "Media":"Written",
+    "LastName":"Smith",
+    "FirstName":"Maili",
+    "Image":"https://blogs.uoregon.edu/uosciencestory/files/2023/04/20210604_Flammable_Images_WL_0014.jpg",
+    "Text":"Rivers like the McKenzie have always been integral to the Pacific Northwest, and dams that have been built across many of its rivers are inseparable from its modern history.   "
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -122.620596,45.350715 ]
+    },
+    "properties": {
+    "Slug":"falls",
+    "Title":"Willamette Falls",
+    "Year":2023,
+    "Topic":"People",
+    "Media":"Written",
+    "LastName":"Toalson",
+    "FirstName":"Maris",
+    "Image":"https://blogs.uoregon.edu/uosciencestory/files/2023/04/20210604_Flammable_Images_WL_0014.jpg",
+    "Text":"Rivers like the McKenzie have always been integral to the Pacific Northwest, and dams that have been built across many of its rivers are inseparable from its modern history.   "
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -123.046913,44.042935 ]
+    },
+    "properties": {
+    "Slug":"food",
+    "Title":"Food Waste",
+    "Year":2023,
+    "Topic":"Land",
+    "Media":"Film",
+    "LastName":"Walsh",
+    "FirstName":"Camille",
+    "Image":"https://blogs.uoregon.edu/uosciencestory/files/2023/04/20210604_Flammable_Images_WL_0014.jpg",
+    "Text":"Rivers like the McKenzie have always been integral to the Pacific Northwest, and dams that have been built across many of its rivers are inseparable from its modern history.   "
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -123.277143,44.5793 ]
+    },
+    "properties": {
+    "Slug":"bee",
+    "Title":"Bee Atlas",
+    "Year":2023,
+    "Topic":"Land",
+    "Media":"Written",
+    "LastName":"Wasserman",
+    "FirstName":"Isaac",
+    "Image":"https://blogs.uoregon.edu/uosciencestory/files/2023/04/20210604_Flammable_Images_WL_0014.jpg",
+    "Text":"Rivers like the McKenzie have always been integral to the Pacific Northwest, and dams that have been built across many of its rivers are inseparable from its modern history.   "
+    }
+  }
+]
+}
