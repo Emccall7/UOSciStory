@@ -61,7 +61,7 @@ body { margin: 0; padding: 0; }
             type: 'geojson',
             // Point to GeoJSON data. This example visualizes all M1.0+ earthquakes
             // from 12/22/15 to 1/21/16 as logged by USGS' Earthquake hazards program.
-            data: 'stories.geojson',
+            data: 'https://emccall7.github.io/UOSciStory/stories.geojson',
             cluster: true,
             clusterMaxZoom: 14, // Max zoom to cluster points on
             clusterRadius: 50 // Radius of each cluster when clustering points (defaults to 50)
@@ -117,8 +117,23 @@ body { margin: 0; padding: 0; }
             source: 'stories',
             filter: ['!', ['has', 'point_count']],
             paint: {
-                'circle-color': '#11b4da',
-                'circle-radius': 4,
+                'circle-color': [
+                    'match',
+                    ['get', 'Topic'],
+                    'Land', 'green', 
+                    'Water', 'blue', 
+                    'People', 'red',
+                    'gray' // Default color for other values
+                ] /* '#11b4da'*/ ,
+                'circle-radius': 8,
+                'circle-opacity': [
+                    'match',
+                    ['get', 'Year'],
+                    '2021', 0.2, 
+                    '2022', 0.6,
+                    '2023', 1,
+                    1 // Default opacity
+                ] /* '#11b4da'*/ ,
                 'circle-stroke-width': 1,
                 'circle-stroke-color': '#fff'
             }
@@ -173,12 +188,23 @@ body { margin: 0; padding: 0; }
                 .addTo(map);
         });
 
+        //Change cursor types on mouseover
         map.on('mouseenter', 'clusters', () => {
             map.getCanvas().style.cursor = 'pointer';
         });
+        
         map.on('mouseleave', 'clusters', () => {
             map.getCanvas().style.cursor = '';
         });
+        
+        map.on('mouseover', 'unclustered-point', () => {
+            map.getCanvas().style.cursor = 'pointer';
+        });
+        
+        map.on('mouseleave', 'unclustered-point', () => {
+            map.getCanvas().style.cursor = '';
+        });
+        
     });
 </script>
 
