@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Create and style clusters</title>
+<title>Mapping Science Stories</title>
 <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
 <link href="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css" rel="stylesheet">
 <script src="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js"></script>
@@ -12,200 +12,321 @@ body { margin: 0; padding: 0; }
     
   /* style for text*/
    h1 {
-     color: blue;
-     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-       text-align: center;
-     font-size: large;
+     color: black;
+     /* font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; */
+     font-family: 'Inter', Helvetica, Arial, Lucida, sans-serif;
+     text-align: center;
+     font-size: 2em;
    }
     
     p {
      color: gray;
      font-family: "Times New Roman", Times, serif;
      text-align: center;
-     font-size: medium;
+     font-size: 1.5em;
    }
     
-
+   #randomButton {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        z-index: 9999;
+   }
+    
+   #topicFilter {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        z-index: 9999;
+    }
 </style>
 </head>
 
-    
 <body>
 
-<div id="map"></div>
+    <div id="map"></div>
+    <button id="randomButton">Open Random Pop-up</button>
+    <select id="topicFilter">
+          <option value="">All Topics</option>
+          <option value="Land">Land</option>
+          <option value="Water">Water</option>
+          <option value="People">People</option>
+        </select>
 
-    
-<script>
-	mapboxgl.accessToken = 'pk.eyJ1IjoiZWRlbm1jY2FsbCIsImEiOiJja214eTR3bGMwMGM2MnB0ZGs5dHh1eGtzIn0.S-fSav0WfGimuhXNj2ErEQ';
-    
-    // Set bounds to Oregon
-    var bounds = [
-		    [-126.268082, 41.355068], // Southwest coordinates
-		    [-114.619473, 46.950028] // Northeast coordinates 
-	];
-    
-    const map = new mapboxgl.Map({
-        container: 'map',
-        // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
-        style: 'mapbox://styles/edenmccall/clhy7uchu00rj01r8b9no1f35',
-        center: [-123.074056, 44.043331],
-        zoom: 7,
-        maxBounds: bounds // Sets bounds from variable above
-    });
+    <script>
+        mapboxgl.accessToken = 'pk.eyJ1IjoiZWRlbm1jY2FsbCIsImEiOiJja214eTR3bGMwMGM2MnB0ZGs5dHh1eGtzIn0.S-fSav0WfGimuhXNj2ErEQ';
 
-    map.on('load', () => {
-        // Add a new source from our GeoJSON data and
-        // set the 'cluster' option to true. GL-JS will
-        // add the point_count property to your source data.
-        map.addSource('stories', {
-            type: 'geojson',
-            // Point to GeoJSON data. This example visualizes all M1.0+ earthquakes
-            // from 12/22/15 to 1/21/16 as logged by USGS' Earthquake hazards program.
-            data: 'https://emccall7.github.io/UOSciStory/stories.geojson',
-            cluster: true,
-            clusterMaxZoom: 14, // Max zoom to cluster points on
-            clusterRadius: 50 // Radius of each cluster when clustering points (defaults to 50)
+        // Set bounds to Oregon
+        var bounds = [
+                [-126.268082, 41.355068], // Southwest coordinates
+                [-114.619473, 46.950028] // Northeast coordinates 
+        ];
+       
+        const originalZoom = 7;
+        
+        // Define a variable to keep track of whether features have loaded or not
+        let isFeaturesLoaded = false;
+
+        // Define an array to store the loaded features
+        let loadedFeatures = [];
+
+        const map = new mapboxgl.Map({
+            container: 'map',
+            // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
+            style: 'mapbox://styles/edenmccall/clhy7uchu00rj01r8b9no1f35',
+            center: [-123.074056, 44.043331],
+            zoom: originalZoom,
+            maxBounds: bounds // Sets bounds from variable above
         });
 
-        map.addLayer({
-            id: 'clusters',
-            type: 'circle',
-            source: 'stories',
-            filter: ['has', 'point_count'],
-            paint: {
-                // Use step expressions (https://docs.mapbox.com/mapbox-gl-js/style-spec/#expressions-step)
-                // with three steps to implement three types of circles:
-                //   * Blue, 20px circles when point count is less than 5
-                //   * Yellow, 30px circles when point count is between 5 and 10
-                //   * Pink, 40px circles when point count is greater than or equal to 10
-                'circle-color': [
-                    'step',
-                    ['get', 'point_count'],
-                    '#51bbd6',
-                    5,
-                    '#f1f075',
-                    10,
-                    '#f28cb1'
-                ],
-                'circle-radius': [
-                    'step',
-                    ['get', 'point_count'],
-                    20,
-                    5,
-                    30,
-                    10,
-                    40
-                ]
-            }
-        });
-
-        map.addLayer({
-            id: 'cluster-count',
-            type: 'symbol',
-            source: 'stories',
-            filter: ['has', 'point_count'],
-            layout: {
-                'text-field': ['get', 'point_count_abbreviated'],
-                'text-font': ['DIN Offc Pro Medium', 'Arial Unicode MS Bold'],
-                'text-size': 12
-            }
-        });
-
-        map.addLayer({
-            id: 'unclustered-point',
-            type: 'circle',
-            source: 'stories',
-            filter: ['!', ['has', 'point_count']],
-            paint: {
-                'circle-color': [
-                    'match',
-                    ['get', 'Topic'],
-                    'Land', 'green', 
-                    'Water', 'blue', 
-                    'People', 'red',
-                    'gray' // Default color for other values
-                ] /* '#11b4da'*/ ,
-                'circle-radius': 8,
-                'circle-opacity': [
-                    'match',
-                    ['get', 'Year'],
-                    '2021', 0.2, 
-                    '2022', 0.6,
-                    '2023', 1,
-                    1 // Default opacity
-                ] /* '#11b4da'*/ ,
-                'circle-stroke-width': 1,
-                'circle-stroke-color': '#fff'
-            }
-        });
-
-        // inspect a cluster on click
-        map.on('click', 'clusters', (e) => {
-            const features = map.queryRenderedFeatures(e.point, {
-                layers: ['clusters']
+        map.on('load', () => {
+            // Add a new source from our GeoJSON data and
+            // set the 'cluster' option to true. GL-JS will
+            // add the point_count property to your source data.
+            map.addSource('stories', {
+                type: 'geojson',
+                // Point to GeoJSON data.
+                data: 'https://emccall7.github.io/UOSciStory/stories.geojson',
+                cluster: true,
+                clusterMaxZoom: 11, // Max zoom to cluster points on
+                clusterRadius: 50 // Radius of each cluster when clustering points (defaults to 50)
             });
-            const clusterId = features[0].properties.cluster_id;
-            map.getSource('stories').getClusterExpansionZoom(
-                clusterId,
-                (err, zoom) => {
-                    if (err) return;
 
-                    map.easeTo({
-                        center: features[0].geometry.coordinates,
-                        zoom: zoom
-                    });
+            map.addLayer({
+                id: 'clusters',
+                type: 'circle',
+                source: 'stories',
+                filter: ['has', 'point_count'],
+                paint: {
+                    // Use step expressions (https://docs.mapbox.com/mapbox-gl-js/style-spec/#expressions-step)
+                    // with three steps to implement three types of circles:
+                    //   * Gray, 20px circles when point count is less than 5
+                    //   * Gray, 30px circles when point count is between 5 and 10
+                    //   * PGray, 40px circles when point count is greater than or equal to 10
+                    'circle-color': [
+                        'step',
+                        ['get', 'point_count'],
+                        'gray',
+                        5,
+                        'gray',
+                        10,
+                        'gray'
+                    ],
+                    'circle-radius': [
+                        'step',
+                        ['get', 'point_count'],
+                        20,
+                        5,
+                        30,
+                        10,
+                        40
+                    ]
                 }
-            );
-        });
+            });
 
-        // When a click event occurs on a feature in
-        // the unclustered-point layer, open a popup at
-        // the location of the feature, with
-        // description HTML from its properties.
-        map.on('click', 'unclustered-point', (e) => {
-            const coordinates = e.features[0].geometry.coordinates.slice();
-            const title = e.features[0].properties.Title;
-            const topic = e.features[0].properties.Topic;
-            const author = e.features[0].properties.FirstName + ' ' + e.features[0].properties.LastName;
-            const year = e.features[0].properties.Year;
-            const image = `<img src ="${e.features[0].properties.Image}" alt="Add Alt Variable Here" width=100% height=100%>`;
+            map.addLayer({
+                id: 'cluster-count',
+                type: 'symbol',
+                source: 'stories',
+                filter: ['has', 'point_count'],
+                layout: {
+                    'text-field': ['get', 'point_count_abbreviated'],
+                    'text-font': ['DIN Offc Pro Medium', 'Arial Unicode MS Bold'],
+                    'text-size': 12
+                }
+            });
 
-            // Ensure that if the map is zoomed out such that
-            // multiple copies of the feature are visible, the
-            // popup appears over the copy being pointed to.
-            while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
-                coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+            map.addLayer({
+                id: 'unclustered-point',
+                type: 'circle',
+                source: 'stories',
+                filter: ['!', ['has', 'point_count']],
+                paint: {
+                    'circle-color': [
+                        'match',
+                        ['get', 'Topic'],
+                        'Land', 'green', 
+                        'Water', 'blue', 
+                        'People', 'red',
+                        'gray' // Default color for other values
+                    ] /* '#11b4da'*/ ,
+                    'circle-radius': 8,
+                    'circle-opacity': [
+                        'match',
+                        ['get', 'Year'],
+                        '2021', 0.2, 
+                        '2022', 0.6,
+                        '2023', 1,
+                        1 // Default opacity
+                    ] /* '#11b4da'*/ ,
+                    'circle-stroke-width': 1,
+                    'circle-stroke-color': '#fff'
+                }
+            });
+            
+            
+            map.addSource('all-stories', {
+                type: 'geojson',
+                data: 'https://emccall7.github.io/UOSciStory/stories.geojson',
+                cluster: false, // Disable clustering
+            });
+            
+            map.addLayer({
+                id: 'all-points',
+                type: 'circle',
+                source: 'all-stories',
+                zindex: -1,
+                paint: {
+                    'circle-color': 'yellow',
+                    'circle-radius': 0,
+                    'circle-opacity': 0,
+                    'circle-stroke-width': 0,
+                    'circle-stroke-color': '#fff'
+                }
+            });
+
+            // Add a click event listener to the button
+            document.getElementById('randomButton').addEventListener('click', openRandomPopup);
+
+            let currentPopup = null; // Reference to the current popup
+            
+            // Define the function to open a random pop-up
+            function openRandomPopup() {
+              //reset zoom to original level
+              map.setZoom(originalZoom);
+
+              // Close the current popup if it exists
+              if (currentPopup) {
+                currentPopup.remove();
+              }
+
+              // Load the GeoJSON data
+              fetch('https://emccall7.github.io/UOSciStory/stories.geojson')
+                .then(response => response.json())
+                .then(data => {
+                  // Get all features from the 'all-points' layer
+                  const allFeatures = data.features;
+
+                  // Generate a random index between 0 and the total number of features
+                  const randomIndex = Math.floor(Math.random() * allFeatures.length);
+
+                  // Get the feature at the random index
+                  const randomFeature = allFeatures[randomIndex];
+
+                  // Extract the necessary information from the feature
+                  const coordinates = randomFeature.geometry.coordinates.slice();
+                  const title = randomFeature.properties.Title;
+                  const author = randomFeature.properties.FirstName + ' ' + randomFeature.properties.LastName;
+                  const year = randomFeature.properties.Year;
+                  const image = `<img src="${randomFeature.properties.Image}" alt="Featured Image for the Story" width="100%" height="100%">`;
+                  const subhead = randomFeature.properties.Text;
+
+                  // Fly to the coordinates of the feature
+                  map.flyTo({
+                    center: coordinates,
+                    zoom: 12,
+                    duration: 2000, // Adjust the duration as needed
+                    easing: (t) => t, // Use linear easing for a smooth flight
+                  });
+
+                  // Create and display the popup after the flyTo animation completes
+                  map.once('moveend', function () {
+                    // Create the popup
+                    const popup = new mapboxgl.Popup()
+                      .setLngLat(coordinates)
+                      .setHTML(
+                        `<h1>${title}</h1>
+                        ${image}
+                        ${subhead}
+                        <p>By ${author}<br>${year}</p>`
+                      )
+                      .addTo(map);
+
+                    currentPopup = popup; // Set the new popup as the current popup
+                  });
+                })
+                .catch(error => {
+                  console.error('Error loading GeoJSON:', error);
+                });
             }
 
-            new mapboxgl.Popup()
-                .setLngLat(coordinates)
-                .setHTML(
-                    //`magnitude: ${mag}<br>Was there a tsunami?: ${tsunami}`
-                    `<h1>${title}</h1>
-                    ${image}
-                    <p>By ${author} <br> ${year}</p>` 
-                )
-                .addTo(map);
-        });
+            // When a click event occurs on a feature in
+            // the unclustered-point layer, open a popup at
+            // the location of the feature, with
+            // description HTML from its properties.
+            map.on('click', 'unclustered-point', (e) => {
+                const coordinates = e.features[0].geometry.coordinates.slice();
+                const title = e.features[0].properties.Title;
+                const topic = e.features[0].properties.Topic;
+                const author = e.features[0].properties.FirstName + ' ' + e.features[0].properties.LastName;
+                const year = e.features[0].properties.Year;
+                const image = `<img src ="${e.features[0].properties.Image}" alt="Featured Image for the Story" width=100% height=100%>`;
+                const subhead = e.features[0].properties.Text;
+                // Ensure that if the map is zoomed out such that
+                // multiple copies of the feature are visible, the
+                // popup appears over the copy being pointed to.
+                while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+                    coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+                }
 
-        //Change cursor types on mouseover
-        map.on('mouseenter', 'clusters', () => {
-            map.getCanvas().style.cursor = 'pointer';
+                // Create and display the pop-up
+                    const popup = new mapboxgl.Popup()
+                        .setLngLat(coordinates)
+                        .setHTML(
+                            `<h1>${title}</h1>
+                            ${image}
+                            ${subhead}
+                            <p>By ${author}<br>${year}</p>`
+                        )
+                    .addTo(map);
+                
+                currentPopup = popup;
+            });
+
+            //Change cursor types on mouseover
+            map.on('mouseenter', 'clusters', () => {
+                map.getCanvas().style.cursor = 'pointer';
+            });
+
+            map.on('mouseleave', 'clusters', () => {
+                map.getCanvas().style.cursor = '';
+            });
+
+            map.on('mouseover', 'unclustered-point', () => {
+                map.getCanvas().style.cursor = 'pointer';
+            });
+
+            map.on('mouseleave', 'unclustered-point', () => {
+                map.getCanvas().style.cursor = '';
+            });
+
+            // Add an event listener to the dropdown select element
+            document.getElementById('topicFilter').addEventListener('change', updateFilter);
+            
+            // Define the function to update the layer filters
+            function updateFilter() {
+              // Get the selected topic
+              const selectedTopic = document.getElementById('topicFilter').value;
+
+              // Update the filters for the cluster and unclustered point layers
+              map.setFilter('clusters', ['all', ['has', 'point_count'], ['any', ['==', ['get', 'Topic'], selectedTopic], ['!', ['has', 'Topic']]]]);
+              map.setFilter('unclustered-point', ['all', ['!', ['has', 'point_count']], ['any', ['==', ['get', 'Topic'], selectedTopic], ['!', ['has', 'Topic']]]]);
+
+              // Update the filter for the cluster count layer
+  map.setFilter('cluster-count', ['all', ['has', 'point_count'], ['any', ['==', ['get', 'Topic'], selectedTopic], ['!', ['has', 'Topic']]]]);
+
+              // Set the zoom level to fit all the features
+              const features = map.querySourceFeatures('stories');
+              const bounds = new mapboxgl.LngLatBounds();
+              features.forEach(feature => {
+                bounds.extend(feature.geometry.coordinates);
+              });
+              map.fitBounds(bounds, { padding: 50, maxZoom: 11 });
+            }
+            
+            // Call the updateFilter function initially to show all topics
+            updateFilter();
         });
-        
-        map.on('mouseleave', 'clusters', () => {
-            map.getCanvas().style.cursor = '';
-        });
-        
-        map.on('mouseover', 'unclustered-point', () => {
-            map.getCanvas().style.cursor = 'pointer';
-        });
-        
-        map.on('mouseleave', 'unclustered-point', () => {
-            map.getCanvas().style.cursor = '';
-        });
-        
-    });
 </script>
 
 </body>
