@@ -327,6 +327,24 @@ body { margin: 0; padding: 0; }
             // Call the updateFilter function initially to show all topics
             updateFilter();
         });
+        
+        // inspect a cluster on click
+        map.on('click', 'clusters', (e) => {
+            const features = map.queryRenderedFeatures(e.point, {
+                layers: ['clusters']
+            });
+            const clusterId = features[0].properties.cluster_id;
+            map.getSource('stories').getClusterExpansionZoom(
+                clusterId,
+                (err, zoom) => {
+                    if (err) return;
+                    map.easeTo({
+                        center: features[0].geometry.coordinates,
+                        zoom: zoom
+                    });
+                }
+            );
+        });
 </script>
 
 </body>
