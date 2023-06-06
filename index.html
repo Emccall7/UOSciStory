@@ -15,42 +15,60 @@ body { margin: 0; padding: 0; }
      color: black;
      /* font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; */
      font-family: 'Inter', Helvetica, Arial, Lucida, sans-serif;
-     text-align: center;
+     /* text-align: center; */
      font-size: 2em;
    }
     
+    h2 {
+     color: black;
+     font-family: 'Inter', Helvetica, Arial, Lucida, sans-serif;
+     font-size: 1em;
+   }
+    
     p {
-     color: gray;
+     color: black;
      font-family: "Times New Roman", Times, serif;
-     text-align: center;
-     font-size: 1.5em;
+     font-size: 1em;
    }
     
    #randomButton {
         position: absolute;
+        font-family: 'Inter', Helvetica, Arial, Lucida, sans-serif;
+       font-size: 2em;
         top: 10px;
         left: 10px;
         z-index: 9999;
    }
     
    #topicFilter {
+       /* Style the select element */
         position: absolute;
+        font-family: 'Inter', Helvetica, Arial, Lucida, sans-serif;
+        font-size: 1.5em;
         top: 10px;
         right: 10px;
         z-index: 9999;
     }
+    
+    #topicFilter option {
+      /* Style the option elements */
+      background-color: #ddd;
+      /* color: #333; */
+      font-size: 1em;
+    }
+    
 </style>
 </head>
 
 <body>
 
     <div id="map"></div>
-    <button id="randomButton">Open Random Pop-up</button>
+    <button id="randomButton">Explore</button>
     <select id="topicFilter">
-          <option value="">All Topics</option>
-          <option value="Land">Land</option>
-          <option value="Water">Water</option>
-          <option value="People">People</option>
+              <option value="">All Topics</option>
+              <option value="Land">Land</option>
+              <option value="Water">Water</option>
+              <option value="People">People</option>
         </select>
 
     <script>
@@ -145,9 +163,9 @@ body { margin: 0; padding: 0; }
                     'circle-color': [
                         'match',
                         ['get', 'Topic'],
-                        'Land', 'green', 
-                        'Water', 'blue', 
-                        'People', 'red',
+                        'Land', '#7DCE82', 
+                        'Water', '#3CDBD3', 
+                        'People', '#FF8360',
                         'gray' // Default color for other values
                     ] /* '#11b4da'*/ ,
                     'circle-radius': 8,
@@ -160,7 +178,14 @@ body { margin: 0; padding: 0; }
                         1 // Default opacity
                     ] /* '#11b4da'*/ ,
                     'circle-stroke-width': 1,
-                    'circle-stroke-color': '#fff'
+                    'circle-stroke-color': [
+                        'match',
+                        ['get', 'Topic'],
+                        'Land', '#548A58', 
+                        'Water', '#289892', 
+                        'People', '#C6654A',
+                        'gray' // Default color for other values
+                    ] /* '#11b4da'*/ 
                 }
             });
             
@@ -177,12 +202,43 @@ body { margin: 0; padding: 0; }
                 source: 'all-stories',
                 zindex: -1,
                 paint: {
-                    'circle-color': 'yellow',
+                    'circle-color': [
+                        'match',
+                        ['get', 'Topic'],
+                        'Land', '#7DCE82', 
+                        'Water', '#3CDBD3', 
+                        'People', '#FF8360',
+                        'gray' // Default color for other values
+                    ] /* '#11b4da'*/ ,
                     'circle-radius': 0,
-                    'circle-opacity': 0,
+                    'circle-opacity': [
+                        'match',
+                        ['get', 'Year'],
+                        '2021', 0.2, 
+                        '2022', 0.6,
+                        '2023', 1,
+                        1 // Default opacity
+                    ] /* '#11b4da'*/ ,
                     'circle-stroke-width': 0,
-                    'circle-stroke-color': '#fff'
+                    'circle-stroke-color': [
+                        'match',
+                        ['get', 'Topic'],
+                        'Land', '#548A58', 
+                        'Water', '#289892', 
+                        'People', '#C6654A',
+                        'gray' // Default color for other values
+                    ] /* '#11b4da'*/
                 }
+            });
+            
+            
+             map.addSource('filtered-stories', {
+                type: 'geojson',
+                // Point to GeoJSON data.
+                data: 'https://emccall7.github.io/UOSciStory/stories.geojson',
+                cluster: true,
+                clusterMaxZoom: 11, // Max zoom to cluster points on
+                clusterRadius: 50 // Radius of each cluster when clustering points (defaults to 50)
             });
 
             // Add a click event listener to the button
@@ -193,8 +249,8 @@ body { margin: 0; padding: 0; }
             // Define the function to open a random pop-up
             function openRandomPopup() {
               //reset zoom to original level
-              map.setZoom(originalZoom);
-
+              //map.setZoom(originalZoom);
+                
               // Close the current popup if it exists
               if (currentPopup) {
                 currentPopup.remove();
@@ -214,16 +270,36 @@ body { margin: 0; padding: 0; }
                   const randomFeature = allFeatures[randomIndex];
 
                   // Extract the necessary information from the feature
-                  const coordinates = randomFeature.geometry.coordinates.slice();
+                  const nextCoordinates = randomFeature.geometry.coordinates.slice();
                   const title = randomFeature.properties.Title;
                   const author = randomFeature.properties.FirstName + ' ' + randomFeature.properties.LastName;
                   const year = randomFeature.properties.Year;
                   const image = `<img src="${randomFeature.properties.Image}" alt="Featured Image for the Story" width="100%" height="100%">`;
                   const subhead = randomFeature.properties.Text;
+                  const topicForPin = randomFeature.properties.Topic;
+                  const link = randomFeature.properties.Link;
+                        
+                  //map.setFilter('all-points', ['==', ['get', 'Topic'], topicForPin]);
+                  map.setFilter('all-points', ['!', ['has', 'point_count']]);
+                  
+                  //Determining time to fly to next coordinates
+                        // Get the current map coordinates
+                          var currentCoordinates = map.getCenter();
 
+                          // Calculate the distance between current and next coordinates
+                          var distance = currentCoordinates.distanceTo(nextCoordinates);
+
+                          // Adjust the duration based on the distance
+                          var duration = Math.min(distance / 1000, 10); // Example: 1 second for every 1000 meters, with a maximum of 10 seconds
+
+                          // Fly to the next coordinates with the calculated duration
+                          map.flyTo(nextCoordinates, {
+                            duration: duration,
+                            animate: true,
+                          });
                   // Fly to the coordinates of the feature
                   map.flyTo({
-                    center: coordinates,
+                    center: nextCoordinates,
                     zoom: 12,
                     duration: 2000, // Adjust the duration as needed
                     easing: (t) => t, // Use linear easing for a smooth flight
@@ -233,12 +309,15 @@ body { margin: 0; padding: 0; }
                   map.once('moveend', function () {
                     // Create the popup
                     const popup = new mapboxgl.Popup()
-                      .setLngLat(coordinates)
+                      .setLngLat(nextCoordinates)
                       .setHTML(
                         `<h1>${title}</h1>
-                        ${image}
+                        <h2>By ${author}<br>${year} ${topicForPin} </h2>
+                        <a href="${link}">${image}</a> 
+                        <br>
                         ${subhead}
-                        <p>By ${author}<br>${year}</p>`
+                        <br>
+                        <a href="${link}">Read More...</a>`
                       )
                       .addTo(map);
 
@@ -254,7 +333,16 @@ body { margin: 0; padding: 0; }
             // the unclustered-point layer, open a popup at
             // the location of the feature, with
             // description HTML from its properties.
-            map.on('click', 'unclustered-point', (e) => {
+            
+            map.on('click', 'unclustered-point', (e) => handlePointClick(e));
+            map.on('click', 'all-points', (e) => handlePointClick(e));
+            
+            function handlePointClick(e) {
+                // Close the current popup if it exists
+                  if (currentPopup) {
+                    currentPopup.remove();
+                  }
+                
                 const coordinates = e.features[0].geometry.coordinates.slice();
                 const title = e.features[0].properties.Title;
                 const topic = e.features[0].properties.Topic;
@@ -262,6 +350,7 @@ body { margin: 0; padding: 0; }
                 const year = e.features[0].properties.Year;
                 const image = `<img src ="${e.features[0].properties.Image}" alt="Featured Image for the Story" width=100% height=100%>`;
                 const subhead = e.features[0].properties.Text;
+                const link = e.features[0].properties.Link;
                 // Ensure that if the map is zoomed out such that
                 // multiple copies of the feature are visible, the
                 // popup appears over the copy being pointed to.
@@ -273,15 +362,18 @@ body { margin: 0; padding: 0; }
                     const popup = new mapboxgl.Popup()
                         .setLngLat(coordinates)
                         .setHTML(
-                            `<h1>${title}</h1>
-                            ${image}
+                             `<h1>${title}</h1>
+                            <h2>By ${author}<br>${year} ${topic} </h2>
+                            <a href="${link}">${image}</a> 
+                            <br>
                             ${subhead}
-                            <p>By ${author}<br>${year}</p>`
+                            <br>
+                            <a href="${link}">Read More...</a>`
                         )
                     .addTo(map);
                 
                 currentPopup = popup;
-            });
+            }
 
             //Change cursor types on mouseover
             map.on('mouseenter', 'clusters', () => {
@@ -299,30 +391,54 @@ body { margin: 0; padding: 0; }
             map.on('mouseleave', 'unclustered-point', () => {
                 map.getCanvas().style.cursor = '';
             });
+            
+            map.on('mouseover', 'all-points', () => {
+                map.getCanvas().style.cursor = 'pointer';
+            });
+
+            map.on('mouseleave', 'all-points', () => {
+                map.getCanvas().style.cursor = '';
+            });
 
             // Add an event listener to the dropdown select element
             document.getElementById('topicFilter').addEventListener('change', updateFilter);
             
-            // Define the function to update the layer filters
-            function updateFilter() {
-              // Get the selected topic
-              const selectedTopic = document.getElementById('topicFilter').value;
+            /// Define the function to update the layer filters
+function updateFilter() {
+  // Get the selected topic
+  const selectedTopic = document.getElementById('topicFilter').value;
 
-              // Update the filters for the cluster and unclustered point layers
-              map.setFilter('clusters', ['all', ['has', 'point_count'], ['any', ['==', ['get', 'Topic'], selectedTopic], ['!', ['has', 'Topic']]]]);
-              map.setFilter('unclustered-point', ['all', ['!', ['has', 'point_count']], ['any', ['==', ['get', 'Topic'], selectedTopic], ['!', ['has', 'Topic']]]]);
+  // Check if "All Topics" is selected
+  if (selectedTopic === "") {
+    // Show all clusters and unclustered-point features
+    map.setFilter('clusters', ['has', 'point_count']);
+    map.setFilter('unclustered-point', ['!', ['has', 'point_count']]);
+    map.setFilter('cluster-count', ['has', 'point_count']);
+    
+    // Reset the 'all-points' layer to 0 radious/not visible
+    map.setPaintProperty('all-points', 'circle-radius', 0);
+    map.setLayoutProperty('clusters', 'visibility', 'visible');
+    map.setLayoutProperty('cluster-count', 'visibility', 'visible');
+    map.setLayoutProperty('clusters', 'visibility', 'visible');
+    map.setLayoutProperty('unclustered-point', 'visibility', 'visible');
+  } else {
+    // Make the 'all-points' layer radius visible
+    map.setPaintProperty('all-points', 'circle-radius', 8);
+    map.setPaintProperty('all-points', 'circle-stroke-width', 1);
+    map.setFilter('all-points', ['==', ['get', 'Topic'], selectedTopic]);
+    map.setLayoutProperty('clusters', 'visibility', 'none');
+    map.setLayoutProperty('cluster-count', 'visibility', 'none');
+    map.setLayoutProperty('unclustered-point', 'visibility', 'none');
+  }
 
-              // Update the filter for the cluster count layer
-  map.setFilter('cluster-count', ['all', ['has', 'point_count'], ['any', ['==', ['get', 'Topic'], selectedTopic], ['!', ['has', 'Topic']]]]);
-
-              // Set the zoom level to fit all the features
-              const features = map.querySourceFeatures('stories');
-              const bounds = new mapboxgl.LngLatBounds();
-              features.forEach(feature => {
-                bounds.extend(feature.geometry.coordinates);
-              });
-              map.fitBounds(bounds, { padding: 50, maxZoom: 11 });
-            }
+  // Set the zoom level to fit all the features
+  const features = map.querySourceFeatures('stories');
+  const bounds = new mapboxgl.LngLatBounds();
+  features.forEach(feature => {
+    bounds.extend(feature.geometry.coordinates);
+  });
+  map.fitBounds(bounds, { padding: 50, maxZoom: 11 });
+}
             
             // Call the updateFilter function initially to show all topics
             updateFilter();
