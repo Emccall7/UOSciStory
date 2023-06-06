@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+
+
 <html>
 <head>
 <meta charset="utf-8">
@@ -279,7 +281,7 @@ body { margin: 0; padding: 0; }
                   const title = randomFeature.properties.Title;
                   const author = randomFeature.properties.FirstName + ' ' + randomFeature.properties.LastName;
                   const year = randomFeature.properties.Year;
-                  const image = `<img src="${randomFeature.properties.Image}" alt="Featured Image for the Story" width="100%" height="100%">`;
+                  const image = `<img src="${randomFeature.properties.Image}" alt="Featured Image for the Story" width="100%">`;
                   const subhead = randomFeature.properties.Text;
                   const topicForPin = randomFeature.properties.Topic;
                   const link = randomFeature.properties.Link;
@@ -353,7 +355,7 @@ body { margin: 0; padding: 0; }
                 const topic = e.features[0].properties.Topic;
                 const author = e.features[0].properties.FirstName + ' ' + e.features[0].properties.LastName;
                 const year = e.features[0].properties.Year;
-                const image = `<img src ="${e.features[0].properties.Image}" alt="Featured Image for the Story" width=100% height=100%>`;
+                const image = `<img src ="${e.features[0].properties.Image}" alt="Featured Image for the Story" width=100%>`;
                 const subhead = e.features[0].properties.Text;
                 const link = e.features[0].properties.Link;
                 // Ensure that if the map is zoomed out such that
