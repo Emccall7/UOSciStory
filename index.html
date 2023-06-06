@@ -76,8 +76,8 @@ body { margin: 0; padding: 0; }
 
         // Set bounds to Oregon
         var bounds = [
-                [-126.268082, 41.355068], // Southwest coordinates
-                [-114.619473, 46.950028] // Northeast coordinates 
+                [-132.992722, 37.492788], // Southwest coordinates
+                [-110.274851, 49.877578] // Northeast coordinates 
         ];
        
         const originalZoom = 7;
@@ -96,8 +96,13 @@ body { margin: 0; padding: 0; }
             zoom: originalZoom,
             maxBounds: bounds // Sets bounds from variable above
         });
+        
+        
 
         map.on('load', () => {
+            
+            map.setCenter([-120.963405, 43.964360]);
+
             // Add a new source from our GeoJSON data and
             // set the 'cluster' option to true. GL-JS will
             // add the point_count property to your source data.
