@@ -45,14 +45,14 @@
     },
     "properties": {
     "Slug":"dryfarm",
-    "Title":"Siletz Dry farming",
+    "Title":"Without Water Rights",
     "Year":2023,
     "Topic":"Land",
     "Media":"Photos",
     "LastName":"Aronson",
     "FirstName":"Eliza",
-    "Image":"https://blogs.uoregon.edu/uosciencestory/files/2023/04/20210604_Flammable_Images_WL_0014.jpg",
-    "Text":"Rivers like the McKenzie have always been integral to the Pacific Northwest, and dams that have been built across many of its rivers are inseparable from its modern history.   "
+    "Image":"https://www.dropbox.com/s/qbnhgw3opylm3pm/2023-04-08%28SciStory_Eliza_CTSICG%290504IW.JPG?dl=0",
+    "Text":"A tribal garden provides food and experiences for members of the Confederated Tribes of Siletz Indians, but with no access to water from the nearby Siletz River, gardeners devised an imaginative rainwater capture system."
     }
   },
   {
@@ -63,14 +63,14 @@
     },
     "properties": {
     "Slug":"pfas",
-    "Title":"PFAS",
+    "Title":"The Killer Chemical Among Us",
     "Year":2023,
     "Topic":"People",
     "Media":"Written",
     "LastName":"Brewer",
     "FirstName":"Jessica",
-    "Image":"https://blogs.uoregon.edu/uosciencestory/files/2023/04/20210604_Flammable_Images_WL_0014.jpg",
-    "Text":"Rivers like the McKenzie have always been integral to the Pacific Northwest, and dams that have been built across many of its rivers are inseparable from its modern history.   "
+    "Image":"https://www.dropbox.com/s/6juwxlitq8xr5vn/DJI_0790.JPG?dl=0",
+    "Text":"An elusive toxin has been entering our waterways, rainfall and bodies without enough warning. Per- and polyfluoroalkyl substances, PFAS, are chemicals with the original purpose to resist water, heat and oil from attaching to everyday items from clothing to laundry detergent."
     }
   },
   {
@@ -81,32 +81,14 @@
     },
     "properties": {
     "Slug":"crab",
-    "Title":"Christmas Crab",
+    "Title":"Christmas Without Crab",
     "Year":2023,
     "Topic":"Water",
     "Media":"Film",
     "LastName":"Cruz",
     "FirstName":"Alonso",
-    "Image":"https://blogs.uoregon.edu/uosciencestory/files/2023/04/20210604_Flammable_Images_WL_0014.jpg",
-    "Text":"Rivers like the McKenzie have always been integral to the Pacific Northwest, and dams that have been built across many of its rivers are inseparable from its modern history.   "
-    }
-  },
-  {
-    "type": "Feature",
-    "geometry": {
-       "type": "Point",
-       "coordinates":  [ -123.072633,44.049802 ]
-    },
-    "properties": {
-    "Slug":"garden",
-    "Title":"Urban Garden and Soil",
-    "Year":2023,
-    "Topic":"Land",
-    "Media":"Written",
-    "LastName":"Hodges",
-    "FirstName":"Lauren",
-    "Image":"https://blogs.uoregon.edu/uosciencestory/files/2023/04/20210604_Flammable_Images_WL_0014.jpg",
-    "Text":"Rivers like the McKenzie have always been integral to the Pacific Northwest, and dams that have been built across many of its rivers are inseparable from its modern history.   "
+    "Image":"https://www.dropbox.com/s/86un5tp35dimyzv/2023-04-20%28ScienceStory_DwightPhoto%29AC_thumbnail.png?dl=0",
+    "Text":"A changing Oregon fishing industry affects livelihoods way up stream."
     }
   },
   {
@@ -117,32 +99,14 @@
     },
     "properties": {
     "Slug":"natbee",
-    "Title":"Native Bees",
+    "Title":"It Takes A Swarm",
     "Year":2023,
     "Topic":"People",
     "Media":"Photos",
     "LastName":"Hutcherson",
     "FirstName":"Ella",
-    "Image":"https://blogs.uoregon.edu/uosciencestory/files/2023/04/20210604_Flammable_Images_WL_0014.jpg",
-    "Text":"Rivers like the McKenzie have always been integral to the Pacific Northwest, and dams that have been built across many of its rivers are inseparable from its modern history.   "
-    }
-  },
-  {
-    "type": "Feature",
-    "geometry": {
-       "type": "Point",
-       "coordinates":  [ -122.673245,45.523547 ]
-    },
-    "properties": {
-    "Slug":"crows",
-    "Title":"PDX Crows",
-    "Year":2023,
-    "Topic":"People",
-    "Media":"Written",
-    "LastName":"Lapointe",
-    "FirstName":"Wesley",
-    "Image":"https://blogs.uoregon.edu/uosciencestory/files/2023/04/20210604_Flammable_Images_WL_0014.jpg",
-    "Text":"Rivers like the McKenzie have always been integral to the Pacific Northwest, and dams that have been built across many of its rivers are inseparable from its modern history.   "
+    "Image":"https://www.dropbox.com/s/hv2g4bdn71db0as/2023-05-15%28SciStory_Ella_Lab_Polly%290184IW.JPG?dl=0",
+    "Text":"Native pollinators need our attention — Willamette Valley residents are up to the challenge."
     }
   },
   {
@@ -153,14 +117,14 @@
     },
     "properties": {
     "Slug":"blueberry",
-    "Title":"bugs at Whitewater ranch (SWD)",
+    "Title":"Adapting to the Blueberries",
     "Year":2023,
     "Topic":"Land",
     "Media":"Written",
     "LastName":"Lawrence",
     "FirstName":"Eliza",
-    "Image":"https://blogs.uoregon.edu/uosciencestory/files/2023/04/20210604_Flammable_Images_WL_0014.jpg",
-    "Text":"Rivers like the McKenzie have always been integral to the Pacific Northwest, and dams that have been built across many of its rivers are inseparable from its modern history.   "
+    "Image":"https://www.dropbox.com/s/p3qk3x12lx7n1a0/23.04.28_whitewater_ranch1385.JPG?dl=0",
+    "Text":"Native to Southeast Asia and detected in Oregon in 2009, the drosophila with a yellowish-brown body and red eyes, has been ravaging the blueberry industry in the state."
     }
   },
   {
@@ -171,14 +135,14 @@
     },
     "properties": {
     "Slug":"kelp",
-    "Title":"PNW Kelp",
+    "Title":"The Kelp Keepers",
     "Year":2023,
     "Topic":"Water",
     "Media":"Film",
     "LastName":"Lueck",
     "FirstName":"Anna",
-    "Image":"https://blogs.uoregon.edu/uosciencestory/files/2023/04/20210604_Flammable_Images_WL_0014.jpg",
-    "Text":"Rivers like the McKenzie have always been integral to the Pacific Northwest, and dams that have been built across many of its rivers are inseparable from its modern history.   "
+    "Image":"https://www.dropbox.com/s/csa47nmxzamb0cc/kelpThumbnail.png?dl=0",
+    "Text":"As kelp forests collapse along the Pacific Coast, citizen scientists converge on Port Orford to study what remains and how to protect it."
     }
   },
   {
@@ -189,14 +153,32 @@
     },
     "properties": {
     "Slug":"frog",
-    "Title":"Oregon spotted frogs",
+    "Title":"A Wilderness in the Anthropocene",
     "Year":2023,
     "Topic":"Water",
     "Media":"Photos",
     "LastName":"McCall",
     "FirstName":"Eden",
-    "Image":"https://blogs.uoregon.edu/uosciencestory/files/2023/04/20210604_Flammable_Images_WL_0014.jpg",
-    "Text":"Rivers like the McKenzie have always been integral to the Pacific Northwest, and dams that have been built across many of its rivers are inseparable from its modern history.   "
+    "Image":"https://www.dropbox.com/s/546iqcyro6snd0h/20230423_EIM_001.jpg?dl=0",
+    "Text":"Native frogs threatened by disappearing wetlands and invasive predators find a home in the city and friends in the neighbors."
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -123.067227,44.07786 ]
+    },
+    "properties": {
+    "Slug":"garden",
+    "Title":"A Garden Oasis ",
+    "Year":2023,
+    "Topic":"Land",
+    "Media":"Written",
+    "LastName":"Hodges",
+    "FirstName":"Lauren",
+    "Image":"https://www.dropbox.com/s/acdgibufq5grmld/garden_photo_005.JPG?dl=0",
+    "Text":"The GrassRoots garden feeds the community and the soul."
     }
   },
   {
@@ -207,14 +189,14 @@
     },
     "properties": {
     "Slug":"house",
-    "Title":"Passive Houses",
+    "Title":"Passive Homes Mean Utilities in the Green",
     "Year":2023,
     "Topic":"People",
     "Media":"Illustration",
     "LastName":"Merrill",
     "FirstName":"Maya",
-    "Image":"https://blogs.uoregon.edu/uosciencestory/files/2023/04/20210604_Flammable_Images_WL_0014.jpg",
-    "Text":"Rivers like the McKenzie have always been integral to the Pacific Northwest, and dams that have been built across many of its rivers are inseparable from its modern history.   "
+    "Image":"https://www.dropbox.com/s/5eh5g8mg5xgq4g6/dji_fly_20230528_155940_28_1685314930049_photo_optimized.jpg?dl=0",
+    "Text":"The Kruger’s home may look normal, but it's far from it. "
     }
   },
   {
@@ -225,14 +207,14 @@
     },
     "properties": {
     "Slug":"sound",
-    "Title":"Noise/Commuting",
+    "Title":"A Sound Journey Along the Willamette",
     "Year":2023,
     "Topic":"People",
     "Media":"Maps",
     "LastName":"Miccio",
     "FirstName":"aj",
-    "Image":"https://blogs.uoregon.edu/uosciencestory/files/2023/04/20210604_Flammable_Images_WL_0014.jpg",
-    "Text":"Rivers like the McKenzie have always been integral to the Pacific Northwest, and dams that have been built across many of its rivers are inseparable from its modern history.   "
+    "Image":"https://www.dropbox.com/s/kd8osonjupd7id4/2023-05-27-scan04.jpg?dl=0",
+    "Text":"Sound creates a sense of space in a different way than visuals do. We can use sound to orient ourselves in the landscape. "
     }
   },
   {
@@ -243,14 +225,14 @@
     },
     "properties": {
     "Slug":"creek",
-    "Title":"Amazon Creek",
+    "Title":"The Invisible Pollutants",
     "Year":2023,
     "Topic":"Water",
     "Media":"Maps",
     "LastName":"O'Connell",
     "FirstName":"Riley",
-    "Image":"https://blogs.uoregon.edu/uosciencestory/files/2023/04/20210604_Flammable_Images_WL_0014.jpg",
-    "Text":"Rivers like the McKenzie have always been integral to the Pacific Northwest, and dams that have been built across many of its rivers are inseparable from its modern history.   "
+    "Image":"https://www.dropbox.com/s/m729sd39vqdoxtg/ss23_2022-09_OConnell_Amazon_Goldengardens_aerial-images_Lauri.jpg?dl=0",
+    "Text":"During Amazon Creek’s journey through the watershed, it picks up pollutants through runoff and drift, known as non-point source pollutants."
     }
   },
   {
@@ -261,14 +243,14 @@
     },
     "properties": {
     "Slug":"cows",
-    "Title":"Oregon Dairy",
+    "Title":"A Dairy Farm and A Changing Industry",
     "Year":2023,
     "Topic":"Land",
     "Media":"Written",
     "LastName":"Smith",
     "FirstName":"Maili",
-    "Image":"https://blogs.uoregon.edu/uosciencestory/files/2023/04/20210604_Flammable_Images_WL_0014.jpg",
-    "Text":"Rivers like the McKenzie have always been integral to the Pacific Northwest, and dams that have been built across many of its rivers are inseparable from its modern history.   "
+    "Image":"https://www.dropbox.com/s/onas1q5xr6670om/ss2023_05_28_cows013.JPG?dl=0",
+    "Text":"Milk is Oregon’s fourth most valuable commodity. But the number of licensed dairies has dropped in the last several decades."
     }
   },
   {
@@ -279,14 +261,14 @@
     },
     "properties": {
     "Slug":"falls",
-    "Title":"Willamette Falls",
+    "Title":"Reclaiming and Restoring Willamette Falls",
     "Year":2023,
     "Topic":"People",
     "Media":"Written",
     "LastName":"Toalson",
     "FirstName":"Maris",
-    "Image":"https://blogs.uoregon.edu/uosciencestory/files/2023/04/20210604_Flammable_Images_WL_0014.jpg",
-    "Text":"Rivers like the McKenzie have always been integral to the Pacific Northwest, and dams that have been built across many of its rivers are inseparable from its modern history.   "
+    "Image":"https://www.dropbox.com/s/kvyjd9oifte689i/2023-05-20%28SciStory_Maris_Willamette.Falls%290024IW.jpg?dl=0",
+    "Text":"Colonization and industrialization disconnected Native people from Willamette Falls, but a purchase by the Confederated Tribes of Grand Ronde hopes to rebuild that broken connection."
     }
   },
   {
@@ -297,14 +279,14 @@
     },
     "properties": {
     "Slug":"food",
-    "Title":"Food Waste",
+    "Title":"Rethinking Wasted Food",
     "Year":2023,
     "Topic":"Land",
     "Media":"Film",
     "LastName":"Walsh",
     "FirstName":"Camille",
-    "Image":"https://blogs.uoregon.edu/uosciencestory/files/2023/04/20210604_Flammable_Images_WL_0014.jpg",
-    "Text":"Rivers like the McKenzie have always been integral to the Pacific Northwest, and dams that have been built across many of its rivers are inseparable from its modern history.   "
+    "Image":"https://www.dropbox.com/s/6vh8sh3dv9g0tqs/foodThumbnail.png?dl=0",
+    "Text":"Where does food waste come from and how can it be avoided?"
     }
   },
   {
@@ -315,14 +297,14 @@
     },
     "properties": {
     "Slug":"bee",
-    "Title":"Bee Atlas",
+    "Title":"More Than the Bumble Bee",
     "Year":2023,
     "Topic":"Land",
     "Media":"Written",
     "LastName":"Wasserman",
     "FirstName":"Isaac",
-    "Image":"https://blogs.uoregon.edu/uosciencestory/files/2023/04/20210604_Flammable_Images_WL_0014.jpg",
-    "Text":"Rivers like the McKenzie have always been integral to the Pacific Northwest, and dams that have been built across many of its rivers are inseparable from its modern history.   "
+    "Image":"https://www.dropbox.com/s/bd8ih80bdxhtbu8/2023-04-12%28SciStory_Bees_Lab%290136IW.jpg?dl=0",
+    "Text":"The Oregon Bee Atlas relies on a volunteer army of bee collectors to learn about Oregon’s native bees - the first step to saving them."
     }
   }
 ]
