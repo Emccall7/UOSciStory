@@ -43,7 +43,7 @@
     "type": "Feature",
     "geometry": {
        "type": "Point",
-       "coordinates":  [ -123.894418,44.739943 ]
+       "coordinates":  [ -123.888606,44.716674 ]
     },
     "properties": {
     "Slug":"dryfarm",
@@ -62,7 +62,7 @@
     "type": "Feature",
     "geometry": {
        "type": "Point",
-       "coordinates":  [ -121.999304,44.372832 ]
+       "coordinates":  [ -121.996856,44.372714 ]
     },
     "properties": {
     "Slug":"pfas",
@@ -81,7 +81,7 @@
     "type": "Feature",
     "geometry": {
        "type": "Point",
-       "coordinates":  [ -124.066445,44.624643 ]
+       "coordinates":  [ -124.328221,43.34236 ]
     },
     "properties": {
     "Slug":"crab",
@@ -100,7 +100,7 @@
     "type": "Feature",
     "geometry": {
        "type": "Point",
-       "coordinates":  [ -123.074368,44.045436 ]
+       "coordinates":  [ -123.073086,44.046585 ]
     },
     "properties": {
     "Slug":"natbee",
@@ -119,7 +119,7 @@
     "type": "Feature",
     "geometry": {
        "type": "Point",
-       "coordinates":  [ -122.623032,44.12184 ]
+       "coordinates":  [ -122.624005,44.12225 ]
     },
     "properties": {
     "Slug":"blueberry",
@@ -195,7 +195,7 @@
     "type": "Feature",
     "geometry": {
        "type": "Point",
-       "coordinates":  [ -123.104926,44.000309 ]
+       "coordinates":  [ -122.905386,44.004786 ]
     },
     "properties": {
     "Slug":"house",
@@ -233,7 +233,7 @@
     "type": "Feature",
     "geometry": {
        "type": "Point",
-       "coordinates":  [ -123.076591,44.011152 ]
+       "coordinates":  [ -123.076901,43.999288 ]
     },
     "properties": {
     "Slug":"creek",
@@ -252,7 +252,7 @@
     "type": "Feature",
     "geometry": {
        "type": "Point",
-       "coordinates":  [ -123.17278,44.47204 ]
+       "coordinates":  [ -123.303498,44.7966 ]
     },
     "properties": {
     "Slug":"cows",
@@ -309,7 +309,7 @@
     "type": "Feature",
     "geometry": {
        "type": "Point",
-       "coordinates":  [ -123.277143,44.5793 ]
+       "coordinates":  [ -123.64617,42.27828 ]
     },
     "properties": {
     "Slug":"bee",
