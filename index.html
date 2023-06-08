@@ -356,6 +356,7 @@ body { margin: 0; padding: 0; }
                   //map.setFilter('all-points', ['==', ['get', 'Topic'], topicForPin]);
                   map.setFilter('all-points', ['!', ['has', 'point_count']]);
                   
+                  
                   // Calculate the distance between the current map center and the random feature's coordinates
                   const currentCenter = map.getCenter();
                   const distance = turf.distance(
@@ -366,8 +367,16 @@ body { margin: 0; padding: 0; }
                     // Adjust the duration based on the distance
                   const duration = distance * 25; // Multiplier changes time
                   
+                  
+                  // Calculate the destination point with offset
+const offsetDistance = 2; // Adjust the offset distance as needed
+const offsetBearing = 0; // Adjust the offset bearing as needed
+const offsetCoordinates = turf.destination(turf.point(nextCoordinates), offsetDistance, offsetBearing).geometry.coordinates;
+
+                  
+                  
                   map.flyTo({
-                    center: nextCoordinates,
+                    center: offsetCoordinates,
                     zoom: 12,
                     duration: duration, // Adjust the duration as needed
                     easing: (t) => t, // Use linear easing for a smooth flight
@@ -436,9 +445,15 @@ body { margin: 0; padding: 0; }
                     coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
                 }
                 
+                
+                 // Calculate the destination point with offset
+const offsetDistance = 2; // Adjust the offset distance as needed
+const offsetBearing = 0; // Adjust the offset bearing as needed
+const offsetCoordinates = turf.destination(turf.point(coordinates), offsetDistance, offsetBearing).geometry.coordinates;
+                
                 // Fly to the coordinates of the feature
                 map.flyTo({
-                    center: coordinates,
+                    center: offsetCoordinates,
                     zoom: 12,
                     duration: duration, // Adjust the duration as needed
                     easing: (t) => t, // Use linear easing for a smooth flight
