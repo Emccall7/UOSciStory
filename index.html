@@ -89,6 +89,27 @@ body { margin: 0; padding: 0; }
         width: 125%;
         align-content: center;
         align-self: center;
+        border: 1px solid #929292;
+    }
+    
+    /* Create a tip so it has a border as well */ 
+        /* Code for creating the border thanks to wafisher Oct 2, 2019 comment found here: https://github.com/mapbox/mapbox-gl-js/issues/8368 */
+    .mapboxgl-popup-content:before {
+        content: '';
+        position: absolute;
+        /* I've found 9px looks better than 10px */
+        top: -webkit-calc(100% - 9px);
+        top: calc(100% - 10px);
+        left: calc(50% - 10px);
+        height: 20px;
+        width: 20px;
+        background: white;
+        transform: rotate(45deg);
+        border-bottom: inherit;
+        border-right: inherit;
+        /* The shadow is translated down a bit so it doesn't show inside the pop-up */
+        /* box-shadow: 4px 4px 4px -1px rgba(0, 0, 0, 0.1); */
+        z-index: 9999;
     }
     
     /* Different sized pop-up for mobile screen */
@@ -394,7 +415,7 @@ const offsetCoordinates = turf.destination(turf.point(nextCoordinates), offsetDi
                   // Create and display the popup after the flyTo animation completes
                   map.once('moveend', function () {
                     // Create the popup
-                    const popup = new mapboxgl.Popup()
+                    const popup = new mapboxgl.Popup() //new mapboxgl.Popup({closeButton: false})
                       .setLngLat(nextCoordinates)
                       .setHTML(
                           `<h1>${title}</h1><hr>
@@ -471,7 +492,8 @@ const offsetCoordinates = turf.destination(turf.point(coordinates), offsetDistan
                 // Create and display the popup after the flyTo animation completes
                 map.once('moveend', function () {
                     // Create the popup
-                    const popup = new mapboxgl.Popup()
+                    const popup = new mapboxgl.Popup() //new mapboxgl.Popup({closeButton: false})
+                    
                         .setLngLat(coordinates)
                         .setHTML(
                            `<h1>${title}</h1><hr>
