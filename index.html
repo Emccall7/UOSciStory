@@ -19,20 +19,22 @@ body { margin: 0; padding: 0; }
      font-family: 'Inter', Helvetica, Arial, Lucida, sans-serif;
      /* text-align: center; */
      font-size: 2em;
+     line-height: 1.25em;
    }
     
     h2 {
-     color: black;
+     color: #808080;
      font-family: 'Inter', Helvetica, Arial, Lucida, sans-serif;
-     font-size: 1em;
+     font-size: 1.3em;
    }
     
     p {
-     color: black;
+     color: #808080;
      font-family: "Times New Roman", Times, serif;
-     font-size: 1em;
+     font-size: 1.2em;
    }
     
+   /* style for buttons */
    #randomButton {
         position: absolute;
         font-family: 'Inter', Helvetica, Arial, Lucida, sans-serif;
@@ -42,6 +44,27 @@ body { margin: 0; padding: 0; }
         z-index: 9999;
    }
     
+    #resetButton {
+        position: absolute;
+        font-family: 'Inter', Helvetica, Arial, Lucida, sans-serif;
+        font-size: 1.25em;
+        color: darkgray;
+        top: 60px;
+        left: 10px;
+        z-index: 9999;
+   }
+    
+    #styleButton {
+        position: absolute;
+        font-family: 'Inter', Helvetica, Arial, Lucida, sans-serif;
+        font-size: 1.25em;
+        color: darkgray;
+        top: 90px;
+        right: 10px;
+        z-index: 9999;
+   }
+
+   /* style for filter dropdown */
    #topicFilter {
        /* Style the select element */
         position: absolute;
@@ -54,25 +77,41 @@ body { margin: 0; padding: 0; }
     
     #topicFilter option {
       /* Style the option elements */
-      background-color: #ddd;
-      /* color: #333; */
-      font-size: 1em;
+      background-color: #fff;
+      color: #333;
+      font-family: 'Inter', Helvetica, Arial, Lucida, sans-serif;
+      font-size: .8em;
     }
+    
+    /* style for popups */
+    .mapboxgl-popup-content {
+        width: 125%;
+        align-content: center;
+        align-self: center;
+    }
+    
+    .mapboxgl-popup-content hr {
+        margin: 10px 0;
+        border: none;
+        border-top: 1px solid #ccc;
+      }
     
 </style>
 </head>
 
 <body>
-
-    <div id="map"></div>
-    <button id="randomButton">Explore</button>
-    <select id="topicFilter">
-              <option value="">All Topics</option>
-              <option value="Land">Land</option>
-              <option value="Water">Water</option>
-              <option value="People">People</option>
+   <div id="map-container">
+        <div id="map"></div>
+        <button id="randomButton">Explore</button>
+        <button id="resetButton">Reset Zoom</button>
+        <select id="topicFilter">
+                  <option value="" style="color: darkgray;">All Topics</option>
+                  <option value="Land" style="color: #7DCE82;">Land</option>
+                  <option value="Water" style="color: #3CDBD3;">Water</option>
+                  <option value="People" style="color: #FF8360;">People</option>
         </select>
-
+    </div>
+        
     <script>
         mapboxgl.accessToken = 'pk.eyJ1IjoiZWRlbm1jY2FsbCIsImEiOiJja214eTR3bGMwMGM2MnB0ZGs5dHh1eGtzIn0.S-fSav0WfGimuhXNj2ErEQ';
 
@@ -92,19 +131,17 @@ body { margin: 0; padding: 0; }
 
         const map = new mapboxgl.Map({
             container: 'map',
-            // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
+            // My custom Mapbox style basemap
             style: 'mapbox://styles/edenmccall/clhy7uchu00rj01r8b9no1f35',
             center: [-123.074056, 44.043331],
             zoom: originalZoom,
             maxBounds: bounds // Sets bounds from variable above
         });
         
-        
-
         map.on('load', () => {
             
-            map.setCenter([-120.963405, 43.964360]);
-
+            //map.setCenter([-120.963405, 43.964360]);
+            
             // Add a new source from our GeoJSON data and
             // set the 'cluster' option to true. GL-JS will
             // add the point_count property to your source data.
@@ -116,7 +153,37 @@ body { margin: 0; padding: 0; }
                 clusterMaxZoom: 11, // Max zoom to cluster points on
                 clusterRadius: 50 // Radius of each cluster when clustering points (defaults to 50)
             });
+                      
+            // Add a click event listener to the reset button
+            document.getElementById('resetButton').addEventListener('click', resetMap);
 
+             // Define the function to reset the map
+              function resetMap() {
+                // Reset the zoom and center of the map to the original values
+                map.fitBounds(bounds, {
+                  padding: 20, // Adjust padding as needed
+                  duration: 0 // Set duration to 0 for an immediate reset
+                });
+
+                // Close the current popup if it exists
+                if (currentPopup) {
+                  currentPopup.remove();
+                  currentPopup = null;
+                }
+
+                // Reset the filter on the 'all-points' layer
+                //map.setFilter('all-points', null);
+              }
+
+              // Listen for the 'moveend' event instead of 'zoomend'
+              map.on('moveend', function() {
+                // Check if the map is zoomed out beyond the original extent
+                if (map.getZoom() < map.getBounds().getCenter().zoom) {
+                  // Reset the map to the original extent
+                  resetMap();
+                }
+              });
+            
             map.addLayer({
                 id: 'clusters',
                 type: 'circle',
@@ -237,8 +304,7 @@ body { margin: 0; padding: 0; }
                     ] /* '#11b4da'*/
                 }
             });
-            
-            
+                        
              map.addSource('filtered-stories', {
                 type: 'geojson',
                 // Point to GeoJSON data.
@@ -318,15 +384,14 @@ body { margin: 0; padding: 0; }
                     const popup = new mapboxgl.Popup()
                       .setLngLat(nextCoordinates)
                       .setHTML(
-                        `<h1>${title}</h1>
-                        <h2>By ${author}<br>${year} ${topicForPin} </h2>
-                        <a href="${link}" target="_blank">${image}</a> 
-                        <br>
-                        ${subhead}
-                        <br>
-                        <a href="${link}" target="_blank">Read More...</a>`
-                      )
-                      .addTo(map);
+                          `<h1>${title}</h1><hr>
+                          <h2>By ${author}<br>${year} ${topicForPin}</h2>
+                          <a href="${link}" target="_blank">${image}</a> 
+                          <br>
+                          ${subhead}
+                          <a href="${link}" target="_blank" style="color: darkgray;">Read More...</a>`
+                        )
+                        .addTo(map);
 
                     currentPopup = popup; // Set the new popup as the current popup
                   });
@@ -364,22 +429,31 @@ body { margin: 0; padding: 0; }
                 while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
                     coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
                 }
-
-                // Create and display the pop-up
+                
+                // Fly to the coordinates of the feature
+                map.flyTo({
+                    center: coordinates,
+                    zoom: 12,
+                    duration: 2000, // Adjust the duration as needed
+                    easing: (t) => t, // Use linear easing for a smooth flight
+                });
+                
+                // Create and display the popup after the flyTo animation completes
+                map.once('moveend', function () {
+                    // Create the popup
                     const popup = new mapboxgl.Popup()
                         .setLngLat(coordinates)
                         .setHTML(
-                             `<h1>${title}</h1>
-                            <h2>By ${author}<br>${year} ${topic} </h2>
-                            <a href="${link}" target="_blank">${image}</a> 
-                            <br>
-                            ${subhead}
-                            <br>
-                            <a href="${link}" target="_blank">Read More...</a>`
+                           `<h1>${title}</h1><hr>
+                          <h2>By ${author}<br>${year} ${topic}</h2>
+                          <a href="${link}" target="_blank">${image}</a> 
+                          <br>
+                          ${subhead}
+                          <a href="${link}" target="_blank" style="color: darkgray;">Read More...</a>`
                         )
-                    .addTo(map);
-                
-                currentPopup = popup;
+                        .addTo(map);
+                    currentPopup = popup; // Set the new popup as the current popup
+                });
             }
 
             //Change cursor types on mouseover
