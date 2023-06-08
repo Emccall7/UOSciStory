@@ -8,6 +8,7 @@
 <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
 <link href="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css" rel="stylesheet">
 <script src="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@turf/turf@6.5.0"></script>
 <style>
 body { margin: 0; padding: 0; }
 #map { position: absolute; top: 0; bottom: 0; width: 100%; }
@@ -341,7 +342,7 @@ body { margin: 0; padding: 0; }
 
                   // Get the feature at the random index
                   const randomFeature = allFeatures[randomIndex];
-
+                  
                   // Extract the necessary information from the feature
                   const nextCoordinates = randomFeature.geometry.coordinates.slice();
                   const title = randomFeature.properties.Title;
@@ -355,26 +356,20 @@ body { margin: 0; padding: 0; }
                   //map.setFilter('all-points', ['==', ['get', 'Topic'], topicForPin]);
                   map.setFilter('all-points', ['!', ['has', 'point_count']]);
                   
-                  //Determining time to fly to next coordinates
-                        // Get the current map coordinates
-                          var currentCoordinates = map.getCenter();
-
-                          // Calculate the distance between current and next coordinates
-                          var distance = currentCoordinates.distanceTo(nextCoordinates);
-
-                          // Adjust the duration based on the distance
-                          var duration = Math.min(distance / 1000, 10); // Example: 1 second for every 1000 meters, with a maximum of 10 seconds
-
-                          // Fly to the next coordinates with the calculated duration
-                          map.flyTo(nextCoordinates, {
-                            duration: duration,
-                            animate: true,
-                          });
-                  // Fly to the coordinates of the feature
+                  // Calculate the distance between the current map center and the random feature's coordinates
+                  const currentCenter = map.getCenter();
+                  const distance = turf.distance(
+                    turf.point([currentCenter.lng, currentCenter.lat]),
+                    turf.point(nextCoordinates)
+                  );
+                
+                    // Adjust the duration based on the distance
+                  const duration = distance * 25; // Multiplier changes time
+                  
                   map.flyTo({
                     center: nextCoordinates,
                     zoom: 12,
-                    duration: 2000, // Adjust the duration as needed
+                    duration: duration, // Adjust the duration as needed
                     easing: (t) => t, // Use linear easing for a smooth flight
                   });
 
@@ -415,6 +410,17 @@ body { margin: 0; padding: 0; }
                     currentPopup.remove();
                   }
                 
+                // Calculate the distance between the current map center and the clicked point
+                  const currentCenter = map.getCenter();
+                  const clickedPoint = e.lngLat;
+                  const distance = turf.distance(
+                    turf.point([currentCenter.lng, currentCenter.lat]),
+                    turf.point([clickedPoint.lng, clickedPoint.lat])
+                  );
+                
+                // Adjust the duration based on the distance
+              const duration = distance * 25; // Multiplier changes time
+                
                 const coordinates = e.features[0].geometry.coordinates.slice();
                 const title = e.features[0].properties.Title;
                 const topic = e.features[0].properties.Topic;
@@ -434,7 +440,7 @@ body { margin: 0; padding: 0; }
                 map.flyTo({
                     center: coordinates,
                     zoom: 12,
-                    duration: 2000, // Adjust the duration as needed
+                    duration: duration, // Adjust the duration as needed
                     easing: (t) => t, // Use linear easing for a smooth flight
                 });
                 
