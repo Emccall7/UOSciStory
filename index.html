@@ -507,6 +507,12 @@ const offsetCoordinates = turf.destination(turf.point(coordinates), offsetDistan
             
             /// Define the function to update the layer filters
 function updateFilter() {
+  // Close the current popup if it exists
+                if (currentPopup) {
+                  currentPopup.remove();
+                  currentPopup = null;
+                }
+    
   // Get the selected topic
   const selectedTopic = document.getElementById('topicFilter').value;
 
