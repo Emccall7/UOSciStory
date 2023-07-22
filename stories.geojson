@@ -5,57 +5,38 @@
     "type": "Feature",
     "geometry": {
        "type": "Point",
-       "coordinates":  [ -122.585765,44.143865 ]
+       "coordinates":  [ -123.64617,42.27828 ]
     },
     "properties": {
-    "Slug":"harden",
-    "Title":"Hardened",
-    "Year":2021,
-    "Topic":"Land",
-    "Media":"Photos",
-    "LastName":"Lapointe",
-    "FirstName":"Wesley",
-    "Image":"https://blogs.uoregon.edu/uosciencestory/files/2023/04/20210604_Flammable_Images_WL_0014.jpg",
-    "Text":"Oregon’s forests are designed to burn; our homes don’t have to be. Still standing after the 2020 wildfires, some Oregon homes point to a future of coexistence with fire.",
-    "Link":"https://blogs.uoregon.edu/uosciencestory/dryfarm/"
-    }
-  },
-  {
-    "type": "Feature",
-    "geometry": {
-       "type": "Point",
-       "coordinates":  [ -122.611778,44.137225 ]
-    },
-    "properties": {
-    "Slug":"dam",
-    "Title":"Beautiful and Dammed",
-    "Year":2022,
-    "Topic":"Water",
-    "Media":"Illustration",
-    "LastName":"Aronson",
-    "FirstName":"Eliza",
-    "Image":"https://blogs.uoregon.edu/uosciencestory/files/2023/03/DJI_0077-1.jpg",
-    "Text":"Rivers like the McKenzie have always been integral to the Pacific Northwest, and dams that have been built across many of its rivers are inseparable from its modern history.   ",
-    "Link":"https://blogs.uoregon.edu/uosciencestory/dryfarm/"
-    }
-  },
-  {
-    "type": "Feature",
-    "geometry": {
-       "type": "Point",
-       "coordinates":  [ -123.888606,44.716674 ]
-    },
-    "properties": {
-    "Slug":"dryfarm",
-    "Title":"Without Water Rights",
+    "Slug":"bee",
+    "Title":"Collecting For A Cause",
     "Year":2023,
-    "Topic":"Land",
-    "Media":"Photos",
-    "LastName":"Aronson",
-    "FirstName":"Eliza",
-    "Image":"https://blogs.uoregon.edu/uosciencestory/files/2023/06/2023-04-08SciStory_Eliza_CTSICG0504IW.jpg",
-    "Text":"A tribal garden provides food and experiences for members of the Confederated Tribes of Siletz Indians, but with no access to water from the nearby Siletz River, gardeners devised an imaginative rainwater capture system.",
-    "Link":"https://blogs.uoregon.edu/uosciencestory/dryfarm/"
+    "Topic":"People",
+    "Media":"Written",
+    "LastName":"Wasserman",
+    "FirstName":"Isaac",
+    "Image":"https://blogs.uoregon.edu/uosciencestory/files/2023/06/bee_photos_001.jpg",
+    "Text":"Volunteers annually fan out across Oregon to gather hundreds of wild bees. These pollinators sacrifice their lives to a bee atlas that improves our knowledge of them.",
+    "Link":"https://blogs.uoregon.edu/uosciencestory/bee/"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -122.620596,45.350715 ]
+    },
+    "properties": {
+    "Slug":"falls",
+    "Title":"Willamette Falls Homecoming",
+    "Year":2023,
+    "Topic":"People",
+    "Media":"Written",
+    "LastName":"Toalson",
+    "FirstName":"Maris",
+    "Image":"https://blogs.uoregon.edu/uosciencestory/files/2023/06/falls_photo001.jpg",
+    "Text":"A century and a half ago European settlers drove Indigenous people from Oregon's Willamette Falls, but the Grande Ronde Tribe has reclaimed part of this ancient gathering place.",
+    "Link":"https://blogs.uoregon.edu/uosciencestory/falls/"
     }
   },
   {
@@ -66,34 +47,15 @@
     },
     "properties": {
     "Slug":"pfas",
-    "Title":"The Killer Chemical Among Us",
+    "Title":"As Clean As Water Can Be",
     "Year":2023,
-    "Topic":"People",
+    "Topic":"Water",
     "Media":"Written",
     "LastName":"Brewer",
     "FirstName":"Jessica",
-    "Image":"https://blogs.uoregon.edu/uosciencestory/files/2023/06/DJI_0790.jpg",
-    "Text":"An elusive toxin has been entering our waterways, rainfall and bodies without enough warning. Per- and polyfluoroalkyl substances, PFAS, are chemicals with the original purpose to resist water, heat and oil from attaching to everyday items from clothing to laundry detergent.",
+    "Image":"https://blogs.uoregon.edu/uosciencestory/files/2023/05/DJI_0792.jpg",
+    "Text":"The water of Clear Lake, some 90 miles east of Eugene, Oregon, isn't as clean as it looks.",
     "Link":"https://blogs.uoregon.edu/uosciencestory/pfas/"
-    }
-  },
-  {
-    "type": "Feature",
-    "geometry": {
-       "type": "Point",
-       "coordinates":  [ -124.328221,43.34236 ]
-    },
-    "properties": {
-    "Slug":"crab",
-    "Title":"Christmas Without Crab",
-    "Year":2023,
-    "Topic":"Water",
-    "Media":"Film",
-    "LastName":"Cruz",
-    "FirstName":"Alonso",
-    "Image":"https://blogs.uoregon.edu/uosciencestory/files/2023/06/2023-04-20ScienceStory_DwightPhotoAC_thumbnail.png",
-    "Text":"A changing Oregon fishing industry affects livelihoods way up stream.",
-    "Link":"https://blogs.uoregon.edu/uosciencestory/crab/"
     }
   },
   {
@@ -106,11 +68,11 @@
     "Slug":"natbee",
     "Title":"It Takes A Swarm",
     "Year":2023,
-    "Topic":"People",
+    "Topic":"Land",
     "Media":"Photos",
     "LastName":"Hutcherson",
     "FirstName":"Ella",
-    "Image":"https://blogs.uoregon.edu/uosciencestory/files/2023/06/2023-05-15SciStory_Ella_Lab_Polly0184IW.jpg",
+    "Image":"https://blogs.uoregon.edu/uosciencestory/files/2023/06/2023-04-12SciStory_Bees_Lab0115IW.jpg",
     "Text":"Native pollinators need our attention — Willamette Valley residents are up to the challenge.",
     "Link":"https://blogs.uoregon.edu/uosciencestory/natbee/"
     }
@@ -119,19 +81,19 @@
     "type": "Feature",
     "geometry": {
        "type": "Point",
-       "coordinates":  [ -122.624005,44.12225 ]
+       "coordinates":  [ -122.905386,44.004786 ]
     },
     "properties": {
-    "Slug":"blueberry",
-    "Title":"Adapting to the Blueberries",
+    "Slug":"house",
+    "Title":"Saving Energy One Design At A Time",
     "Year":2023,
-    "Topic":"Land",
-    "Media":"Written",
-    "LastName":"Lawrence",
-    "FirstName":"Eliza",
-    "Image":"https://blogs.uoregon.edu/uosciencestory/files/2023/05/23.04.28_blueberries_19.jpg",
-    "Text":"Native to Southeast Asia and detected in Oregon in 2009, the drosophila with a yellowish-brown body and red eyes, has been ravaging the blueberry industry in the state.",
-    "Link":"https://blogs.uoregon.edu/uosciencestory/blueberry/"
+    "Topic":"People",
+    "Media":"Illustration",
+    "LastName":"Merrill",
+    "FirstName":"Maya",
+    "Image":"https://blogs.uoregon.edu/uosciencestory/files/2023/05/dji_fly_20230528_155930_27_1685314931026_photo_optimized.jpg",
+    "Text":"The Kugler’s house looks like many other houses around Eugene, Oregon, but it's not. Every construction detail of the house minimizes energy use.",
+    "Link":"https://blogs.uoregon.edu/uosciencestory/house/"
     }
   },
   {
@@ -148,28 +110,9 @@
     "Media":"Film",
     "LastName":"Lueck",
     "FirstName":"Anna",
-    "Image":"https://blogs.uoregon.edu/uosciencestory/files/2023/06/kelpThumbnail.png",
+    "Image":"https://blogs.uoregon.edu/uosciencestory/files/2023/05/kelp_photos_02.jpg",
     "Text":"As kelp forests collapse along the Pacific Coast, citizen scientists converge on Port Orford to study what remains and how to protect it.",
     "Link":"https://blogs.uoregon.edu/uosciencestory/kelp/"
-    }
-  },
-  {
-    "type": "Feature",
-    "geometry": {
-       "type": "Point",
-       "coordinates":  [ -121.31773,44.049151 ]
-    },
-    "properties": {
-    "Slug":"frog",
-    "Title":"A Wilderness in the Anthropocene",
-    "Year":2023,
-    "Topic":"Water",
-    "Media":"Photos",
-    "LastName":"McCall",
-    "FirstName":"Eden",
-    "Image":"https://blogs.uoregon.edu/uosciencestory/files/2023/06/20230423_EIM_001.jpg",
-    "Text":"Native frogs threatened by disappearing wetlands and invasive predators find a home in the city and friends in the neighbors.",
-    "Link":"https://blogs.uoregon.edu/uosciencestory/pfas/"
     }
   },
   {
@@ -180,14 +123,14 @@
     },
     "properties": {
     "Slug":"garden",
-    "Title":"A Garden Oasis ",
+    "Title":"My Quiet Garden Oasis ",
     "Year":2023,
     "Topic":"Land",
     "Media":"Written",
     "LastName":"Hodges",
     "FirstName":"Lauren",
-    "Image":"https://blogs.uoregon.edu/uosciencestory/files/2023/06/garden_photo_005.jpg",
-    "Text":"The GrassRoots garden feeds the community and the soul.",
+    "Image":"https://blogs.uoregon.edu/uosciencestory/files/2023/06/garden_photos_003.jpg",
+    "Text":"The plants at the GrassRoots garden in Eugene, Oregon, take in my stress and release tranquility, much like they absorb carbon dioxide and emit oxygen.",
     "Link":"https://blogs.uoregon.edu/uosciencestory/garden/"
     }
   },
@@ -195,19 +138,57 @@
     "type": "Feature",
     "geometry": {
        "type": "Point",
-       "coordinates":  [ -122.905386,44.004786 ]
+       "coordinates":  [ -123.831319,44.732167 ]
     },
     "properties": {
-    "Slug":"house",
-    "Title":"Passive Homes Mean Utilities in the Green",
+    "Slug":"dryfarm",
+    "Title":"A River Runs By It",
     "Year":2023,
-    "Topic":"People",
-    "Media":"Illustration",
-    "LastName":"Merrill",
-    "FirstName":"Maya",
-    "Image":"https://blogs.uoregon.edu/uosciencestory/files/2023/06/dji_fly_20230528_155940_28_1685314930049_photo_optimized.jpg",
-    "Text":"The Kruger’s home may look normal, but it's far from it. ",
-    "Link":"https://blogs.uoregon.edu/uosciencestory/house/"
+    "Topic":"Water",
+    "Media":"Photos",
+    "LastName":"Aronson",
+    "FirstName":"Eliza",
+    "Image":"https://blogs.uoregon.edu/uosciencestory/files/2023/05/dryfarm_illustration001_crop.jpg",
+    "Text":"Lack of access to water from a nearby namesake river has not stopped the Siletz tribe from creating a flourishing garden, aided by an innovative scheme to capture water from the sky.",
+    "Link":"https://blogs.uoregon.edu/uosciencestory/dryfarm/"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -123.303498,44.7966 ]
+    },
+    "properties": {
+    "Slug":"cows",
+    "Title":"Oregon Dairy Aspires to Higher Ideals",
+    "Year":2023,
+    "Topic":"Land",
+    "Media":"Written",
+    "LastName":"Smith",
+    "FirstName":"Maili",
+    "Image":"https://blogs.uoregon.edu/uosciencestory/files/2023/06/cows_photos_01.jpg",
+    "Text":"Amid the rise of Oregon dairies with more than 2,500 cows, Willamette Valley dairyman Ross Bansen focuses on environmental stewardship and the well-being of his 150-cow herd.",
+    "Link":"https://blogs.uoregon.edu/uosciencestory/cows/"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -122.624005,44.12225 ]
+    },
+    "properties": {
+    "Slug":"blueberry",
+    "Title":"Blueberry Blues",
+    "Year":2023,
+    "Topic":"Land",
+    "Media":"Written",
+    "LastName":"Lawrence",
+    "FirstName":"Eliza",
+    "Image":"https://blogs.uoregon.edu/uosciencestory/files/2023/06/blueberry_photos_01.jpg",
+    "Text":"Whitewater Ranch blueberry farm adapts to shifting climate, a fly pest and global competition.",
+    "Link":"https://blogs.uoregon.edu/uosciencestory/blueberry/"
     }
   },
   {
@@ -218,14 +199,14 @@
     },
     "properties": {
     "Slug":"sound",
-    "Title":"A Sound Journey Along the Willamette",
+    "Title":"Sound Journey By Bike",
     "Year":2023,
     "Topic":"People",
     "Media":"Maps",
     "LastName":"Miccio",
     "FirstName":"aj",
-    "Image":"https://blogs.uoregon.edu/uosciencestory/files/2023/06/2023-05-27-scan04.jpg",
-    "Text":"Sound creates a sense of space in a different way than visuals do. We can use sound to orient ourselves in the landscape. ",
+    "Image":"https://blogs.uoregon.edu/uosciencestory/files/2023/05/2023-05-27-scan04.jpg",
+    "Text":"How does the practice of listening help us make sense of our place?",
     "Link":"https://blogs.uoregon.edu/uosciencestory/sound/"
     }
   },
@@ -237,91 +218,15 @@
     },
     "properties": {
     "Slug":"creek",
-    "Title":"The Invisible Pollutants",
+    "Title":"Echoes of Amazon Creek",
     "Year":2023,
     "Topic":"Water",
     "Media":"Maps",
     "LastName":"O'Connell",
     "FirstName":"Riley",
-    "Image":"https://blogs.uoregon.edu/uosciencestory/files/2023/06/ss23_2022-09_OConnell_Amazon_Goldengardens_aerial-images_Lauri.jpg",
-    "Text":"During Amazon Creek’s journey through the watershed, it picks up pollutants through runoff and drift, known as non-point source pollutants.",
+    "Image":"https://blogs.uoregon.edu/uosciencestory/files/2023/05/creek_photos_05.jpg",
+    "Text":"By taking a closer look into Amazon Creek, we can better understand our relationship with the water, land, and each other.",
     "Link":"https://blogs.uoregon.edu/uosciencestory/creek/"
-    }
-  },
-  {
-    "type": "Feature",
-    "geometry": {
-       "type": "Point",
-       "coordinates":  [ -123.303498,44.7966 ]
-    },
-    "properties": {
-    "Slug":"cows",
-    "Title":"A Dairy Farm and A Changing Industry",
-    "Year":2023,
-    "Topic":"Land",
-    "Media":"Written",
-    "LastName":"Smith",
-    "FirstName":"Maili",
-    "Image":"https://blogs.uoregon.edu/uosciencestory/files/2023/06/ss2023_05_28_cows013.jpg",
-    "Text":"Milk is Oregon’s fourth most valuable commodity. But the number of licensed dairies has dropped in the last several decades.",
-    "Link":"https://blogs.uoregon.edu/uosciencestory/cows/"
-    }
-  },
-  {
-    "type": "Feature",
-    "geometry": {
-       "type": "Point",
-       "coordinates":  [ -122.620596,45.350715 ]
-    },
-    "properties": {
-    "Slug":"falls",
-    "Title":"Reclaiming and Restoring Willamette Falls",
-    "Year":2023,
-    "Topic":"People",
-    "Media":"Written",
-    "LastName":"Toalson",
-    "FirstName":"Maris",
-    "Image":"https://blogs.uoregon.edu/uosciencestory/files/2023/06/2023-05-20SciStory_Maris_Willamette.Falls0024IW.jpg",
-    "Text":"Colonization and industrialization disconnected Native people from Willamette Falls, but a purchase by the Confederated Tribes of Grand Ronde hopes to rebuild that broken connection.",
-    "Link":"https://blogs.uoregon.edu/uosciencestory/falls/"
-    }
-  },
-  {
-    "type": "Feature",
-    "geometry": {
-       "type": "Point",
-       "coordinates":  [ -123.046913,44.042935 ]
-    },
-    "properties": {
-    "Slug":"food",
-    "Title":"Rethinking Wasted Food",
-    "Year":2023,
-    "Topic":"Land",
-    "Media":"Film",
-    "LastName":"Walsh",
-    "FirstName":"Camille",
-    "Image":"https://blogs.uoregon.edu/uosciencestory/files/2023/06/foodThumbnail.png",
-    "Text":"Where does food waste come from and how can it be avoided?",
-    "Link":"https://blogs.uoregon.edu/uosciencestory/food/"
-    }
-  },
-  {
-    "type": "Feature",
-    "geometry": {
-       "type": "Point",
-       "coordinates":  [ -123.64617,42.27828 ]
-    },
-    "properties": {
-    "Slug":"bee",
-    "Title":"More Than the Bumble Bee",
-    "Year":2023,
-    "Topic":"Land",
-    "Media":"Written",
-    "LastName":"Wasserman",
-    "FirstName":"Isaac",
-    "Image":"https://blogs.uoregon.edu/uosciencestory/files/2023/06/2023-04-12SciStory_Bees_Lab0136IW.jpg",
-    "Text":"The Oregon Bee Atlas relies on a volunteer army of bee collectors to learn about Oregon’s native bees - the first step to saving them.",
-    "Link":"https://blogs.uoregon.edu/uosciencestory/pfas/"
     }
   }
 ]
