@@ -1,233 +1,252 @@
 {
-   "type": "FeatureCollection",
-   "features": [
-  {
-    "type": "Feature",
-    "geometry": {
-       "type": "Point",
-       "coordinates":  [ -123.64617,42.27828 ]
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-123.64617, 42.27828]
+      },
+      "properties": {
+        "Slug": "bee",
+        "Title": "Collecting For A Cause",
+        "Year": 2023,
+        "Topic": "People",
+        "Media": "Written",
+        "LastName": "Wasserman",
+        "FirstName": "Isaac",
+        "Image": "https://blogs.uoregon.edu/uosciencestory/files/2023/06/bee_photos_001.jpg",
+        "Text": "Volunteers annually fan out across Oregon to gather hundreds of wild bees. These pollinators sacrifice their lives to a bee atlas that improves our knowledge of them.",
+        "Link": "https://blogs.uoregon.edu/uosciencestory/bee/"
+      }
     },
-    "properties": {
-    "Slug":"bee",
-    "Title":"Collecting For A Cause",
-    "Year":2023,
-    "Topic":"People",
-    "Media":"Written",
-    "LastName":"Wasserman",
-    "FirstName":"Isaac",
-    "Image":"https://blogs.uoregon.edu/uosciencestory/files/2023/06/bee_photos_001.jpg",
-    "Text":"Volunteers annually fan out across Oregon to gather hundreds of wild bees. These pollinators sacrifice their lives to a bee atlas that improves our knowledge of them.",
-    "Link":"https://blogs.uoregon.edu/uosciencestory/bee/"
-    }
-  },
-  {
-    "type": "Feature",
-    "geometry": {
-       "type": "Point",
-       "coordinates":  [ -122.620596,45.350715 ]
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-122.620596, 45.350715]
+      },
+      "properties": {
+        "Slug": "falls",
+        "Title": "Willamette Falls Homecoming",
+        "Year": 2023,
+        "Topic": "People",
+        "Media": "Written",
+        "LastName": "Toalson",
+        "FirstName": "Maris",
+        "Image": "https://blogs.uoregon.edu/uosciencestory/files/2023/06/falls_photo001.jpg",
+        "Text": "A century and a half ago European settlers drove Indigenous people from Oregon's Willamette Falls, but the Grande Ronde Tribe has reclaimed part of this ancient gathering place.",
+        "Link": "https://blogs.uoregon.edu/uosciencestory/falls/"
+      }
     },
-    "properties": {
-    "Slug":"falls",
-    "Title":"Willamette Falls Homecoming",
-    "Year":2023,
-    "Topic":"People",
-    "Media":"Written",
-    "LastName":"Toalson",
-    "FirstName":"Maris",
-    "Image":"https://blogs.uoregon.edu/uosciencestory/files/2023/06/falls_photo001.jpg",
-    "Text":"A century and a half ago European settlers drove Indigenous people from Oregon's Willamette Falls, but the Grande Ronde Tribe has reclaimed part of this ancient gathering place.",
-    "Link":"https://blogs.uoregon.edu/uosciencestory/falls/"
-    }
-  },
-  {
-    "type": "Feature",
-    "geometry": {
-       "type": "Point",
-       "coordinates":  [ -121.996856,44.372714 ]
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-121.996856, 44.372714]
+      },
+      "properties": {
+        "Slug": "pfas",
+        "Title": "As Clean As Water Can Be",
+        "Year": 2023,
+        "Topic": "Water",
+        "Media": "Written",
+        "LastName": "Brewer",
+        "FirstName": "Jessica",
+        "Image": "https://blogs.uoregon.edu/uosciencestory/files/2023/05/DJI_0792.jpg",
+        "Text": "The water of Clear Lake, some 90 miles east of Eugene, Oregon, isn't as clean as it looks.",
+        "Link": "https://blogs.uoregon.edu/uosciencestory/pfas/"
+      }
     },
-    "properties": {
-    "Slug":"pfas",
-    "Title":"As Clean As Water Can Be",
-    "Year":2023,
-    "Topic":"Water",
-    "Media":"Written",
-    "LastName":"Brewer",
-    "FirstName":"Jessica",
-    "Image":"https://blogs.uoregon.edu/uosciencestory/files/2023/05/DJI_0792.jpg",
-    "Text":"The water of Clear Lake, some 90 miles east of Eugene, Oregon, isn't as clean as it looks.",
-    "Link":"https://blogs.uoregon.edu/uosciencestory/pfas/"
-    }
-  },
-  {
-    "type": "Feature",
-    "geometry": {
-       "type": "Point",
-       "coordinates":  [ -123.073086,44.046585 ]
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-123.073086, 44.046585]
+      },
+      "properties": {
+        "Slug": "natbee",
+        "Title": "It Takes A Swarm",
+        "Year": 2023,
+        "Topic": "Land",
+        "Media": "Photos",
+        "LastName": "Hutcherson",
+        "FirstName": "Ella",
+        "Image": "https://blogs.uoregon.edu/uosciencestory/files/2023/06/2023-04-12SciStory_Bees_Lab0115IW.jpg",
+        "Text": "Native pollinators need our attention — Willamette Valley residents are up to the challenge.",
+        "Link": "https://blogs.uoregon.edu/uosciencestory/natbee/"
+      }
     },
-    "properties": {
-    "Slug":"natbee",
-    "Title":"It Takes A Swarm",
-    "Year":2023,
-    "Topic":"Land",
-    "Media":"Photos",
-    "LastName":"Hutcherson",
-    "FirstName":"Ella",
-    "Image":"https://blogs.uoregon.edu/uosciencestory/files/2023/06/2023-04-12SciStory_Bees_Lab0115IW.jpg",
-    "Text":"Native pollinators need our attention — Willamette Valley residents are up to the challenge.",
-    "Link":"https://blogs.uoregon.edu/uosciencestory/natbee/"
-    }
-  },
-  {
-    "type": "Feature",
-    "geometry": {
-       "type": "Point",
-       "coordinates":  [ -122.905386,44.004786 ]
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-122.905386, 44.004786]
+      },
+      "properties": {
+        "Slug": "house",
+        "Title": "Saving Energy One Design At A Time",
+        "Year": 2023,
+        "Topic": "People",
+        "Media": "Illustration",
+        "LastName": "Merrill",
+        "FirstName": "Maya",
+        "Image": "https://blogs.uoregon.edu/uosciencestory/files/2023/05/dji_fly_20230528_155930_27_1685314931026_photo_optimized.jpg",
+        "Text": "The Kugler’s house looks like many other houses around Eugene, Oregon, but it's not. Every construction detail of the house minimizes energy use.",
+        "Link": "https://blogs.uoregon.edu/uosciencestory/house/"
+      }
     },
-    "properties": {
-    "Slug":"house",
-    "Title":"Saving Energy One Design At A Time",
-    "Year":2023,
-    "Topic":"People",
-    "Media":"Illustration",
-    "LastName":"Merrill",
-    "FirstName":"Maya",
-    "Image":"https://blogs.uoregon.edu/uosciencestory/files/2023/05/dji_fly_20230528_155930_27_1685314931026_photo_optimized.jpg",
-    "Text":"The Kugler’s house looks like many other houses around Eugene, Oregon, but it's not. Every construction detail of the house minimizes energy use.",
-    "Link":"https://blogs.uoregon.edu/uosciencestory/house/"
-    }
-  },
-  {
-    "type": "Feature",
-    "geometry": {
-       "type": "Point",
-       "coordinates":  [ -124.502188,42.735367 ]
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-124.502188, 42.735367]
+      },
+      "properties": {
+        "Slug": "kelp",
+        "Title": "The Kelp Keepers",
+        "Year": 2023,
+        "Topic": "Water",
+        "Media": "Film",
+        "LastName": "Lueck",
+        "FirstName": "Anna",
+        "Image": "https://blogs.uoregon.edu/uosciencestory/files/2023/05/kelp_photos_02.jpg",
+        "Text": "As kelp forests collapse along the Pacific Coast, citizen scientists converge on Port Orford to study what remains and how to protect it.",
+        "Link": "https://blogs.uoregon.edu/uosciencestory/kelp/"
+      }
     },
-    "properties": {
-    "Slug":"kelp",
-    "Title":"The Kelp Keepers",
-    "Year":2023,
-    "Topic":"Water",
-    "Media":"Film",
-    "LastName":"Lueck",
-    "FirstName":"Anna",
-    "Image":"https://blogs.uoregon.edu/uosciencestory/files/2023/05/kelp_photos_02.jpg",
-    "Text":"As kelp forests collapse along the Pacific Coast, citizen scientists converge on Port Orford to study what remains and how to protect it.",
-    "Link":"https://blogs.uoregon.edu/uosciencestory/kelp/"
-    }
-  },
-  {
-    "type": "Feature",
-    "geometry": {
-       "type": "Point",
-       "coordinates":  [ -123.067227,44.07786 ]
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-123.067227, 44.07786]
+      },
+      "properties": {
+        "Slug": "garden",
+        "Title": "My Quiet Garden Oasis",
+        "Year": 2023,
+        "Topic": "Land",
+        "Media": "Written",
+        "LastName": "Hodges",
+        "FirstName": "Lauren",
+        "Image": "https://blogs.uoregon.edu/uosciencestory/files/2023/06/garden_photos_003.jpg",
+        "Text": "The plants at the GrassRoots garden in Eugene, Oregon, take in my stress and release tranquility, much like they absorb carbon dioxide and emit oxygen.",
+        "Link": "https://blogs.uoregon.edu/uosciencestory/garden/"
+      }
     },
-    "properties": {
-    "Slug":"garden",
-    "Title":"My Quiet Garden Oasis ",
-    "Year":2023,
-    "Topic":"Land",
-    "Media":"Written",
-    "LastName":"Hodges",
-    "FirstName":"Lauren",
-    "Image":"https://blogs.uoregon.edu/uosciencestory/files/2023/06/garden_photos_003.jpg",
-    "Text":"The plants at the GrassRoots garden in Eugene, Oregon, take in my stress and release tranquility, much like they absorb carbon dioxide and emit oxygen.",
-    "Link":"https://blogs.uoregon.edu/uosciencestory/garden/"
-    }
-  },
-  {
-    "type": "Feature",
-    "geometry": {
-       "type": "Point",
-       "coordinates":  [ -123.831319,44.732167 ]
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-123.831319, 44.732167]
+      },
+      "properties": {
+        "Slug": "dryfarm",
+        "Title": "A River Runs By It",
+        "Year": 2023,
+        "Topic": "Water",
+        "Media": "Photos",
+        "LastName": "Aronson",
+        "FirstName": "Eliza",
+        "Image": "https://blogs.uoregon.edu/uosciencestory/files/2023/05/dryfarm_illustration001_crop.jpg",
+        "Text": "Lack of access to water from a nearby namesake river has not stopped the Siletz tribe from creating a flourishing garden, aided by an innovative scheme to capture water from the sky.",
+        "Link": "https://blogs.uoregon.edu/uosciencestory/dryfarm/"
+      }
     },
-    "properties": {
-    "Slug":"dryfarm",
-    "Title":"A River Runs By It",
-    "Year":2023,
-    "Topic":"Water",
-    "Media":"Photos",
-    "LastName":"Aronson",
-    "FirstName":"Eliza",
-    "Image":"https://blogs.uoregon.edu/uosciencestory/files/2023/05/dryfarm_illustration001_crop.jpg",
-    "Text":"Lack of access to water from a nearby namesake river has not stopped the Siletz tribe from creating a flourishing garden, aided by an innovative scheme to capture water from the sky.",
-    "Link":"https://blogs.uoregon.edu/uosciencestory/dryfarm/"
-    }
-  },
-  {
-    "type": "Feature",
-    "geometry": {
-       "type": "Point",
-       "coordinates":  [ -123.303498,44.7966 ]
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-123.303498, 44.7966]
+      },
+      "properties": {
+        "Slug": "cows",
+        "Title": "Oregon Dairy Aspires to Higher Ideals",
+        "Year": 2023,
+        "Topic": "Land",
+        "Media": "Written",
+        "LastName": "Smith",
+        "FirstName": "Maili",
+        "Image": "https://blogs.uoregon.edu/uosciencestory/files/2023/06/cows_photos_01.jpg",
+        "Text": "Amid the rise of Oregon dairies with more than 2,500 cows, Willamette Valley dairyman Ross Bansen focuses on environmental stewardship and the well-being of his 150-cow herd.",
+        "Link": "https://blogs.uoregon.edu/uosciencestory/cows/"
+      }
     },
-    "properties": {
-    "Slug":"cows",
-    "Title":"Oregon Dairy Aspires to Higher Ideals",
-    "Year":2023,
-    "Topic":"Land",
-    "Media":"Written",
-    "LastName":"Smith",
-    "FirstName":"Maili",
-    "Image":"https://blogs.uoregon.edu/uosciencestory/files/2023/06/cows_photos_01.jpg",
-    "Text":"Amid the rise of Oregon dairies with more than 2,500 cows, Willamette Valley dairyman Ross Bansen focuses on environmental stewardship and the well-being of his 150-cow herd.",
-    "Link":"https://blogs.uoregon.edu/uosciencestory/cows/"
-    }
-  },
-  {
-    "type": "Feature",
-    "geometry": {
-       "type": "Point",
-       "coordinates":  [ -122.624005,44.12225 ]
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-122.624005, 44.12225]
+      },
+      "properties": {
+        "Slug": "blueberry",
+        "Title": "Blueberry Blues",
+        "Year": 2023,
+        "Topic": "Land",
+        "Media": "Written",
+        "LastName": "Lawrence",
+        "FirstName": "Eliza",
+        "Image": "https://blogs.uoregon.edu/uosciencestory/files/2023/06/blueberry_photos_01.jpg",
+        "Text": "Whitewater Ranch blueberry farm adapts to shifting climate, a fly pest and global competition.",
+        "Link": "https://blogs.uoregon.edu/uosciencestory/blueberry/"
+      }
     },
-    "properties": {
-    "Slug":"blueberry",
-    "Title":"Blueberry Blues",
-    "Year":2023,
-    "Topic":"Land",
-    "Media":"Written",
-    "LastName":"Lawrence",
-    "FirstName":"Eliza",
-    "Image":"https://blogs.uoregon.edu/uosciencestory/files/2023/06/blueberry_photos_01.jpg",
-    "Text":"Whitewater Ranch blueberry farm adapts to shifting climate, a fly pest and global competition.",
-    "Link":"https://blogs.uoregon.edu/uosciencestory/blueberry/"
-    }
-  },
-  {
-    "type": "Feature",
-    "geometry": {
-       "type": "Point",
-       "coordinates":  [ -123.067064,44.051888 ]
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-123.067064, 44.051888]
+      },
+      "properties": {
+        "Slug": "sound",
+        "Title": "Sound Journey By Bike",
+        "Year": 2023,
+        "Topic": "People",
+        "Media": "Maps",
+        "LastName": "Miccio",
+        "FirstName": "aj",
+        "Image": "https://blogs.uoregon.edu/uosciencestory/files/2023/05/2023-05-27-scan04.jpg",
+        "Text": "How does the practice of listening help us make sense of our place?",
+        "Link": "https://blogs.uoregon.edu/uosciencestory/sound/"
+      }
     },
-    "properties": {
-    "Slug":"sound",
-    "Title":"Sound Journey By Bike",
-    "Year":2023,
-    "Topic":"People",
-    "Media":"Maps",
-    "LastName":"Miccio",
-    "FirstName":"aj",
-    "Image":"https://blogs.uoregon.edu/uosciencestory/files/2023/05/2023-05-27-scan04.jpg",
-    "Text":"How does the practice of listening help us make sense of our place?",
-    "Link":"https://blogs.uoregon.edu/uosciencestory/sound/"
-    }
-  },
-  {
-    "type": "Feature",
-    "geometry": {
-       "type": "Point",
-       "coordinates":  [ -123.076901,43.999288 ]
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-123.076901, 43.999288]
+      },
+      "properties": {
+        "Slug": "creek",
+        "Title": "Echoes of Amazon Creek",
+        "Year": 2023,
+        "Topic": "Water",
+        "Media": "Maps",
+        "LastName": "O'Connell",
+        "FirstName": "Riley",
+        "Image": "https://blogs.uoregon.edu/uosciencestory/files/2023/05/creek_photos_05.jpg",
+        "Text": "By taking a closer look into Amazon Creek, we can better understand our relationship with the water, land, and each other.",
+        "Link": "https://blogs.uoregon.edu/uosciencestory/creek/"
+      }
     },
-    "properties": {
-    "Slug":"creek",
-    "Title":"Echoes of Amazon Creek",
-    "Year":2023,
-    "Topic":"Water",
-    "Media":"Maps",
-    "LastName":"O'Connell",
-    "FirstName":"Riley",
-    "Image":"https://blogs.uoregon.edu/uosciencestory/files/2023/05/creek_photos_05.jpg",
-    "Text":"By taking a closer look into Amazon Creek, we can better understand our relationship with the water, land, and each other.",
-    "Link":"https://blogs.uoregon.edu/uosciencestory/creek/"
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-121.317709, 44.049125]
+      },
+      "properties": {
+        "Slug": "oregonspottedfrog",
+        "Title": "Nature Next Door",
+        "Year": 2023,
+        "Topic": "Water",
+        "Media": "Multimedia",
+        "LastName": "McCall",
+        "FirstName": "Eden",
+        "Image": "https://blogs.uoregon.edu/uosciencestory/files/2024/06/20230423_EIM_z6ii_002.jpg",
+        "Text": "A tiny pond surrounded by Bend Oregon’s urban landscape entices a vanishing frog, and the people seeking to save it.",
+        "Link": "https://blogs.uoregon.edu/oregonspottedfrog/"
+      }
     }
-  }
-]
+  ]
 }
