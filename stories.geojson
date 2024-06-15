@@ -24,25 +24,6 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [-122.620596, 45.350715]
-      },
-      "properties": {
-        "Slug": "falls",
-        "Title": "Willamette Falls Homecoming",
-        "Year": 2023,
-        "Topic": "People",
-        "Media": "Written",
-        "LastName": "Toalson",
-        "FirstName": "Maris",
-        "Image": "https://blogs.uoregon.edu/uosciencestory/files/2023/06/falls_photo001.jpg",
-        "Text": "A century and a half ago European settlers drove Indigenous people from Oregon's Willamette Falls, but the Grande Ronde Tribe has reclaimed part of this ancient gathering place.",
-        "Link": "https://blogs.uoregon.edu/uosciencestory/falls/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
         "coordinates": [-121.996856, 44.372714]
       },
       "properties": {
